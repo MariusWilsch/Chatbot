@@ -20,12 +20,6 @@ from classes import ConfidenceDetails, ConfidenceDates, Result, ChatMessage
 MODEL_OPENAI_GPT4 = "gpt-4-1106-preview"
 MODEL_OPENAI_GPT3 = "gpt-3.5-turbo"
 
-# ! Improvement Notes
-# * The generate_final_result function should be async so we can return the ending message earlier
-# * We should try using gpt4 for checking and gpt3.5 for the follow up for faster processing
-# * Similar to the statement above we can try the same with antrhopic 3 opus for checking and sonnet for follow up
-# * Instead of using st.spinner st.status or st.progress we can use a loading state to show the user that the app is processing
-
 # * Begin the Streamlit app
 st.title("We want to learn more about your case")
 
