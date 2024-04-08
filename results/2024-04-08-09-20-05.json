@@ -1,0 +1,27 @@
+{
+    "accident_type": "ongevallen door gebrekkig wegdek",
+    "rationale": [
+        "The user described an incident involving a fall due to stepping into a pothole on a sidewalk.",
+        "The sidewalk's condition was mentioned to be poor with cracks and uneven surfaces.",
+        "The accident resulted from the infrastructure (pothole) rather than a traffic or occupational scenario."
+    ],
+    "annotation": [
+        "walking on the sidewalk",
+        "city center",
+        "large pothole",
+        "filled with water",
+        "recent rain",
+        "lost my balance",
+        "fell forward",
+        "landing on my right arm",
+        "sharp pain in my wrist",
+        "couldn't move it properly",
+        "sidewalk was in poor condition",
+        "cracks and uneven surfaces",
+        "hospital",
+        "X-ray",
+        "fractured wrist"
+    ],
+    "accident_begin": "a couple of weeks ago",
+    "case_started": null
+}

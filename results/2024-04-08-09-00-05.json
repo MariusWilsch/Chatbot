@@ -1,0 +1,30 @@
+{
+    "accident_type": "verkeersongevallen",
+    "rationale": [
+        "The user described being involved in a car accident where another driver ran a red light and collided with their car.",
+        "The accident involved vehicles on the road, which classifies it as a traffic accident."
+    ],
+    "annotation": [
+        "Personal injury",
+        "2 years ago",
+        "case started 4 months ago",
+        "serious car accident",
+        "driver ran a red light",
+        "head-on collision",
+        "hospital",
+        "multiple fractures",
+        "complex leg fracture",
+        "operations",
+        "rehabilitation center",
+        "chronic pain",
+        "difficulty walking",
+        "can no longer work",
+        "legal case",
+        "compensation",
+        "insurance company",
+        "witnesses",
+        "evidence"
+    ],
+    "accident_begin": "2 years ago",
+    "case_started": "4 months ago"
+}
