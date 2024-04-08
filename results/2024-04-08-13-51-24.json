@@ -1,0 +1,33 @@
+{
+    "accident_type": "verkeersongevallen",
+    "rationale": [
+        "The accident involved a collision between two cars on the highway, which is indicative of a traffic accident."
+    ],
+    "annotation": [
+        "car accident",
+        "driving on the highway",
+        "car came from the other side",
+        "collision",
+        "lost control",
+        "guardrail",
+        "other driver drove off",
+        "broken both legs",
+        "major surgery",
+        "hospital",
+        "physical therapy",
+        "financial situation",
+        "government refuses compensation",
+        "legal case ongoing"
+    ],
+    "accident_begin": [
+        "15 months ago",
+        "2023-01-08"
+    ],
+    "case_started": null,
+    "location": "highway",
+    "parties_involved": [
+        "user",
+        "boss"
+    ],
+    "direct_cause": "boss"
+}

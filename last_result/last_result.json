@@ -1,0 +1,31 @@
+{
+    "accident_type": "verkeersongevallen",
+    "rationale": [
+        "The user was driving on the highway when the collision occurred, which indicates it was a traffic accident.",
+        "The mention of another car colliding with the user's car further supports the classification as a traffic accident."
+    ],
+    "annotation": [
+        "highway",
+        "car",
+        "collision",
+        "hit-and-run",
+        "police",
+        "witnesses",
+        "insurance",
+        "repair costs",
+        "damage"
+    ],
+    "accident_begin": [
+        "about 3 months ago",
+        "2024-01-08"
+    ],
+    "case_started": [
+        null
+    ],
+    "location": null,
+    "parties_involved": [
+        "user",
+        "other driver"
+    ],
+    "direct_cause": "hit-and-run"
+}

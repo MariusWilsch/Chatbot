@@ -180,6 +180,9 @@ def generate_final_result(messages: List, client) -> bool:
     os.makedirs("results", exist_ok=True)
     with open(f"results/{now}.json", "w") as f:
         json.dump(processed_data, f, indent=4)
+    os.makedirs("last_result", exist_ok=True)
+    with open("last_result/last_result.json", "w") as f:
+        json.dump(processed_data, f, indent=4)
     return True
 
 
