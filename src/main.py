@@ -1,6 +1,6 @@
 from pprint import pprint
 import streamlit as st
-import json, uuid, os, marvin
+import json, uuid, os, marvin, datetime
 
 # From imports
 from typing import List, Type, Union
@@ -17,11 +17,19 @@ from prompts import (
 )
 from classes import ConfidenceDetails, ConfidenceDates, Result, ChatMessage
 
-st.title("We want to learn more about your case")
-
 MODEL_OPENAI_GPT4 = "gpt-4-1106-preview"
 MODEL_OPENAI_GPT3 = "gpt-3.5-turbo"
 
+# ! Improvement Notes
+# * The generate_final_result function should be async so we can return the ending message earlier
+# * We should try using gpt4 for checking and gpt3.5 for the follow up for faster processing
+# * Similar to the statement above we can try the same with antrhopic 3 opus for checking and sonnet for follow up
+# * Instead of using st.spinner st.status or st.progress we can use a loading state to show the user that the app is processing
+
+# * Begin the Streamlit app
+st.title("We want to learn more about your case")
+
+# * Initialize the session state
 if "client" not in st.session_state:
     st.session_state.client = OpenAI()
 
@@ -63,11 +71,10 @@ def call_llm(
         Type[ChatMessage], Type[ConfidenceDetails], Type[ConfidenceDates], Type[Result]
     ],
     system_prompt: str,
-) -> Union[ChatMessage, ConfidenceDetails, ConfidenceDates, Result]:
+) -> Union[ChatMessage, ConfidenceDetails, ConfidenceDates, dict]:
     # Chat history with system prompt
     chat_history = [{"role": "system", "content": system_prompt}]
     chat_history.extend(messages)
-    pprint(chat_history)
     #! For testing purposes only
     message = client.chat.completions.create(
         model=MODEL_OPENAI_GPT4,
@@ -144,30 +151,41 @@ def check_accident_dates(messages: List, client) -> str:
         return handle_no_confidence(messages, client, confidence_dates)
 
 
+def use_marvin(res_dict: dict, now: datetime) -> dict:
+    res_keys = [
+        key
+        for key in ["accident_begin", "case_started"]
+        if key in res_dict and res_dict[key] is not None
+    ]
+    res_str = ", ".join([str(res_dict[key]) for key in res_keys])
+    print("Result string: ", res_str)
+    res = marvin.extract(
+        data=res_str,
+        target=str,
+        instructions=f"Please format the data as datetime.date format but as str. For relative values compare to {now}. Only return YYYY-MM-DD formatted dates.",
+    )
+    for i, key in enumerate(res_keys):
+        if i < len(res):
+            res_dict[key].append(str(res[i]))
+    print("Result from Marvin: ", res, "\n\n")
+    pprint(res_dict, indent=2)
+    return res_dict
+
+
 def generate_final_result(messages: List, client) -> bool:
     print("Generating final result")
-    result_in_json = call_llm(
+    data = call_llm(
         messages=messages,
         client=client,
         system_prompt=RESULT_PROMPT,
         response_model=None,
     )
     #! For debugging purposes only - Remove this later. Save the model dump to a file
-    os.makedirs("results", exist_ok=True)
     now = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
+    processed_data = use_marvin(data, now)
+    os.makedirs("results", exist_ok=True)
     with open(f"results/{now}.json", "w") as f:
-        json.dump(result_in_json, f, indent=4)
-    # st.session_state.messages.clear()
-
-    #! Testing ask marvin for the result
-    # chat_history_as_str = "\n".join([message["content"] for message in messages])
-    # res = marvin.extract(
-    #     data=chat_history_as_str,
-    #     target=Result,
-    #     instructions="Please fill out the Result data class.",
-    # )
-    # print("Result from Marvin: ", res)
-    # pprint(res)
+        json.dump(processed_data, f, indent=4)
     return True
 
 
@@ -208,6 +226,7 @@ if prompt := st.chat_input("What happend?", disabled=st.session_state.chat_flow_
         st.markdown(response)
     if st.session_state.chat_flow_done:
         st.rerun()
+        # st.session_state.messages.clear()
 
 with st.sidebar:
     st.write("chat_flow_done:  \n", st.session_state.chat_flow_done)
@@ -217,3 +236,7 @@ with st.sidebar:
         "accident_details_confirmed:  \n", st.session_state.accident_details_confirmed
     )
     st.write("accident_dates_confirmed:  \n", st.session_state.accident_dates_confirmed)
+    if btn := st.button("Try marvin"):
+        with open("results/2024-04-08-09-03-49.json", "r") as f:
+            result_dict = json.load(f)
+        use_marvin(res_dict=result_dict, now=datetime.now())
