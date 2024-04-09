@@ -1,5 +1,5 @@
 {
-    "Short summary": "The user was involved in a car accident last Tuesday evening, where another driver in a red pickup truck ran a stop sign and collided with the user's car, leading to a spin and crash into a tree.",
+    "Short summary": "The user was involved in a car accident last Tuesday evening when a red pickup truck ran a stop sign and collided with the user's car, causing it to spin and hit a tree.",
     "annotation": [
         "car accident",
         "last Tuesday evening",
@@ -9,27 +9,30 @@
         "red pickup truck",
         "stop sign",
         "driver's side",
-        "spin",
-        "crash into a nearby tree"
+        "tree",
+        "broke my foot",
+        "provider of my family",
+        "physical job",
+        "can't work"
     ],
     "situation_begin": [
-        "last Tuesday evening around 6 PM",
-        "2024-04-02"
+        "last Tuesday evening around 6 PM"
     ],
     "case_started": null,
-    "parties_involved": [],
-    "direct_cause": "Another driver in a red pickup truck ran a stop sign and collided with the user's car.",
+    "parties_involved": [
+        "user",
+        "guy in a red pickup truck"
+    ],
+    "direct_cause": "red pickup truck ran a stop sign",
     "consequences": [
         "broke my foot",
-        "cannot work",
-        "provider of the family",
-        "physical job",
-        "financial pressure"
+        "unable to work",
+        "provider of family under financial pressure"
     ],
     "cost": {
-        "input_cost": 0.045540000000000004,
-        "output_cost": 0.01053,
-        "total_cost": 0.05607
+        "input_cost": 0.031990000000000005,
+        "output_cost": 0.00843,
+        "total_cost": 0.040420000000000005
     },
     "chat_history": [
         {
@@ -42,19 +45,11 @@
         },
         {
             "role": "assistant",
-            "content": "I'm sorry to hear about the accident. Can you tell me what kind of consequences you're facing now because of this situation?"
+            "content": "That sounds like a tough situation. Can you tell me what kind of consequences you're facing now after the accident?"
         },
         {
             "role": "user",
             "content": "I broke my foot you see and I'm the provider of my family. I have a physcial job so I can't work at all. This puts me into alot of pressure"
-        },
-        {
-            "role": "assistant",
-            "content": "I understand this must be a challenging time for you. To assist you further, could you tell me when you initiated the legal case related to your accident?"
-        },
-        {
-            "role": "user",
-            "content": "No I haven't started a legal case yet,"
         },
         {
             "role": "assistant",

@@ -14,7 +14,7 @@ from config import total_tokens_used
 def use_marvin(res_dict: dict, now: datetime) -> dict:
     res_keys = [
         key
-        for key in ["accident_begin", "case_started"]
+        for key in ["situation_begin", "case_started"]
         if key in res_dict and res_dict[key] is not None
     ]
     res_str = ", ".join([str(res_dict[key]) for key in res_keys])
