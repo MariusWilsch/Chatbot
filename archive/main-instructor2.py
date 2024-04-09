@@ -11,13 +11,13 @@ from typing import List, Literal, Type, Union
 
 
 # My own imports
-from classes import (
+from extras.classes import (
     Result,
     ChatMessage,
     ConfidenceDetails,
     ConfidenceDates,
 )
-from prompts import (
+from extras.prompts import (
     CHECKER_DETAILS_PROMPT,
     CHECKER_DATE_PROMPT,
     FOLLOWUP_QUESTION_PROMPT,

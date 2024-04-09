@@ -26,42 +26,14 @@ Your response should be in a format that can be easily parsed and used to popula
 </response_format>
 </prompt>
 """
-CHECKER_DETAILS_PROMPT_SAVE_FOR_ANTRHOPIC = """
-<prompt> 
-<task> You are an AI assistant tasked with classifying accidents based on user input and chat history. Your role is to determine if there is sufficient information to confidently classify the accident as one of the following types: <accident_types> 1. Verkeersongevallen (traffic accidents) 2. Bedrijfsongevallen (occupational accidents) 3. Ongevallen door dieren (accidents caused by animals) 4. Ongevallen door gebrekkig wegdek (accidents due to poor road conditions) 5. Medische aansprakelijkheid (medical liability) </accident_types> 
-You must also consider any synonyms or similar phrases for the attributes.
-If the user is writing something that is not related to the accident, you can ignore it. 
-If the user is writing nothing related to the accident, count everything as missing.
-</task>
-<confidence_criteria>
-To increase confidence in the classification, focus on identifying the following key attributes:
-<key_attributes>
-Location of the accident
-Parties involved in the accident
-Direct cause of the accident 
-</key_attributes>
-</confidence_criteria>
-<response_format>
-If you have enough information to make a confident classification, return:
-<confidence>True</confidence>
 
-If you lack sufficient information, return:
-<confidence>False</confidence>
-<missing_details>
-Choose from the confidence criteria above and list the missing key details needed to increase confidence in the classification.
-[List of missing details needed to increase confidence in the classification]
-</missing_details>
-Your response should be in a format that can be easily parsed and used to populate the fields of the ConfidenceDetails class.
-</response_format>
-</prompt>
-"""
 
 CHECKER_DATE_PROMPT = """
 <prompt>
 <task> You are an AI assistant tasked with extracting important dates from user input and chat history related to an accident and the corresponding legal case. Your role is to determine if there is sufficient information to confidently extract the following attributes: <attributes> 1. Start date of the accident in relative or absolute form 2. Date the legal case started (if applicable) 3. Whether the legal case has started or not
 </attributes> 
-Remember if the case hasn't started that is a valid response. Only the start date of the accident is required in relative or absolute format. If any of those two are given do not count it as missing. 
-You must also consider any synonyms or similar phrases for the attributes.
+1. Remember if the case hasn't started that is a valid response. Only the start date of the accident is required in relative or absolute format. 
+2. You must also consider any synonyms or similar phrases for the attributes.
 </task>
 <response_format>
 If you have enough information to confidently extract all the required dates and determine the status of the legal case, return:

@@ -1,32 +1,32 @@
 {
     "accident_type": "bedrijfsongevallen",
     "rationale": [
-        "The user mentioned the injury occurred while at work involving heavy machinery, which classifies as an occupational accident."
+        "The accident occurred while the person was working at their company",
+        "Heavy machinery was involved in the accident"
     ],
     "annotation": [
         "broke my foot",
-        "yesterday",
         "working at my company",
-        "heavy machinery fell on it"
+        "heavy machinery fell on it",
+        "factory where I do most of my work",
+        "toilet paper factory"
     ],
     "accident_begin": [
         "yesterday",
         "2024-04-08"
     ],
-    "case_started": [
-        null
-    ],
-    "location": null,
+    "case_started": null,
+    "location": "toilet paper factory",
     "parties_involved": [],
-    "direct_cause": "heavy machinery that fell on foot",
+    "direct_cause": "heavy machinery fell on foot",
     "consequences": [
-        "foot injury",
-        "pain"
+        "broke foot",
+        "foot really hurts"
     ],
     "cost": {
-        "input_cost": 0.030250000000000003,
-        "output_cost": 0.0069,
-        "total_cost": 0.03715
+        "input_cost": 0.0,
+        "output_cost": 0.0,
+        "total_cost": 0.0
     },
     "chat_history": [
         {
@@ -39,11 +39,11 @@
         },
         {
             "role": "assistant",
-            "content": "Oh no, that sounds painful! Can you tell me when exactly did the legal case related to your accident start?"
+            "content": "I'm sorry to hear about your foot injury. That must be painful. Can you tell me more about where this accident happened? Was it at a specific location or job site?"
         },
         {
             "role": "user",
-            "content": "No I haven't started a case yet."
+            "content": "It was in the factory where I do most of my work. I work at toilet paper factory."
         },
         {
             "role": "assistant",
