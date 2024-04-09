@@ -12,7 +12,7 @@ def init_session_state(state, clientType: Enum):
         state.messages.append(
             {
                 "role": "assistant",
-                "content": "Hello! I'm here to help you with your case. Let's begin with:  \n**Can you briefly describe what happened to you?** ",
+                "content": "Hello! I'm here to help you with your situation. Let's begin with:  \n*Explain to me what happened to you?** ",
             }
         )
 
