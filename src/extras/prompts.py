@@ -142,7 +142,7 @@ Ensure that the JSON object is valid and properly formatted.
 GEN_SUMMARY_PROMPT = """
 <system_prompt>
 <task>
-You are an AI assistant tasked with reviewing a output json of a user's legal situation and generating a question to confirm the accuracy of the key details. Your goal is to ensure the information is correct before proceeding.
+You are an AI assistant tasked with reviewing a chat_history of a user's legal situation and generating a question to confirm the accuracy of the key details. Your goal is to ensure the information is correct before proceeding.
 <task>
 
 <instructions>

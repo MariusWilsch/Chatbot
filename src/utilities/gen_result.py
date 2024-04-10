@@ -51,6 +51,16 @@ def calc_cost(total_tokens_used):
     }
 
 
+def save_result_to_disk(processed_data: dict):
+    now = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
+    os.makedirs("results", exist_ok=True)
+    with open(f"results/{now}.json", "w") as f:
+        json.dump(processed_data, f, indent=4)
+    os.makedirs("last_result", exist_ok=True)
+    with open("last_result/last_result.json", "w") as f:
+        json.dump(processed_data, f, indent=4)
+
+
 def generate_final_result(messages: List, client):
     print("Generating final result")
     data = call_llm(
@@ -65,10 +75,5 @@ def generate_final_result(messages: List, client):
     cost_data = calc_cost(total_tokens_used)
     processed_data["cost"] = cost_data
     processed_data["chat_history"] = messages
-    os.makedirs("results", exist_ok=True)
-    with open(f"results/{now}.json", "w") as f:
-        json.dump(processed_data, f, indent=4)
-    os.makedirs("last_result", exist_ok=True)
-    with open("last_result/last_result.json", "w") as f:
-        json.dump(processed_data, f, indent=4)
+    save_result_to_disk(processed_data)
     return processed_data.pop("cost")

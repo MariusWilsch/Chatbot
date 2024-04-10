@@ -21,4 +21,6 @@ runme:
    - Describe the situation date
    - Describe the consequences
    - Describe if the case data is right
-   
+
+### Problems
+- __FIXME__: Right now we pass the chat_history directly into the message parameter of the llm call and also when adding the result_output_json to the user message. These are __uncessary__ input tokens. We must remove that redundancy.
