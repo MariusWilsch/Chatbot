@@ -3,12 +3,14 @@ import streamlit as st
 # From imports
 from typing import List
 from extras.classes import ConfidenceDetails, ConfidenceDates
-from extras.prompts import CHECKER_DATE_PROMPT, CHECKER_DETAILS_PROMPT
+from extras.prompts import (
+    CHECKER_DATE_PROMPT,
+    CHECKER_DETAILS_PROMPT,
+)
 
 # Utilities imports
 from .follow_up import handle_no_confidence
 from .call_llm import call_llm
-
 
 
 def check_accident_details(messages: List, client) -> str:

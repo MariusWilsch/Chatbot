@@ -1,49 +1,49 @@
 {
-    "Short summary": "The user is involved in a legal dispute with their business partner concerning their jointly owned company, which has resulted in a significant financial loss for the user.",
-    "annotation": [
-        "legal dispute",
-        "business partner",
-        "company",
-        "financial loss"
-    ],
-    "situation_begin": [
-        "12 months ago",
-        "2023-04-09"
-    ],
-    "case_started": null,
-    "parties_involved": [
-        "user",
-        "business partner"
-    ],
-    "direct_cause": "dispute with business partner",
-    "consequences": [
-        "significant financial loss"
-    ],
-    "cost": {
-        "input_cost": 0.02868,
-        "output_cost": 0.00696,
-        "total_cost": 0.03564
+  "Short summary": "The user is involved in a legal dispute with their business partner concerning their jointly owned company, which has resulted in a significant financial loss for the user.",
+  "annotation": [
+    "legal dispute",
+    "business partner",
+    "company",
+    "financial loss"
+  ],
+  "situation_begin": [
+    "12 months ago",
+    "2023-04-09"
+  ],
+  "case_started": null,
+  "parties_involved": [
+    "user",
+    "business partner"
+  ],
+  "direct_cause": "dispute with business partner",
+  "consequences": [
+    "significant financial loss"
+  ],
+  "cost": {
+    "input_cost": 0.02868,
+    "output_cost": 0.00696,
+    "total_cost": 0.03564
+  },
+  "chat_history": [
+    {
+      "role": "assistant",
+      "content": "Hello! I'm here to help you with your situation. Let's begin with:  \n*Explain to me what happened to you?** "
     },
-    "chat_history": [
-        {
-            "role": "assistant",
-            "content": "Hello! I'm here to help you with your situation. Let's begin with:  \n*Explain to me what happened to you?** "
-        },
-        {
-            "role": "user",
-            "content": "I had a legal dispute with my business partner. We own a company and he fucked me over. Now I lost alot of money."
-        },
-        {
-            "role": "assistant",
-            "content": "I'm sorry to hear about the trouble with your business partner. Could you tell me when the initial dispute started, and if you've already taken legal action, when did the case officially begin?"
-        },
-        {
-            "role": "user",
-            "content": "No I have not started any legal action. The dispute orginated around 12 months ago"
-        },
-        {
-            "role": "assistant",
-            "content": "Thank you for sharing your story. We will now generate a comprehensive result based on the information provided."
-        }
-    ]
+    {
+      "role": "user",
+      "content": "I had a legal dispute with my business partner. We own a company and he fucked me over. Now I lost alot of money."
+    },
+    {
+      "role": "assistant",
+      "content": "I'm sorry to hear about the trouble with your business partner. Could you tell me when the initial dispute started, and if you've already taken legal action, when did the case officially begin?"
+    },
+    {
+      "role": "user",
+      "content": "No I have not started any legal action. The dispute orginated around 12 months ago"
+    },
+    {
+      "role": "assistant",
+      "content": "Thank you for sharing your story. We will now generate a comprehensive result based on the information provided."
+    }
+  ]
 }

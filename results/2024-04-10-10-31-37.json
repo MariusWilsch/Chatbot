@@ -1,11 +1,13 @@
 {
-    "Short summary": "The user was involved in a car accident on the motorway when another car braked suddenly, causing the user to crash into the back of the car. As a result of the accident, the user sustained a broken foot. This incident has caused distress to the user's family, and it impacts the user's ability to provide for them financially as the main provider.",
+    "Short summary": "The user was involved in a car accident on the motorway, resulting in a broken foot. The accident occurred when another car braked suddenly, causing the user to crash into its back.",
     "annotation": [
         "car accident",
         "motorway",
         "broken foot",
+        "braked suddenly",
+        "crash",
         "main provider",
-        "financial impact"
+        "financial dependency"
     ],
     "situation_begin": [
         "yesterday",
@@ -13,21 +15,22 @@
     ],
     "case_started": null,
     "parties_involved": [],
-    "direct_cause": "another car braked suddenly on the motorway",
+    "direct_cause": "Another car braked suddenly on the motorway, leading to a collision.",
     "consequences": [
         "broken foot",
         "distress to family",
-        "inability to provide financially"
+        "inability to fulfill role as main provider",
+        "financial strain on family"
     ],
     "cost": {
-        "input_cost": 0.08138000000000001,
-        "output_cost": 0.01473,
-        "total_cost": 0.09611
+        "input_cost": 0.051870000000000006,
+        "output_cost": 0.01146,
+        "total_cost": 0.06333000000000001
     },
     "chat_history": [
         {
             "role": "assistant",
-            "content": "Hello! I'm here to help you with your situation. Let's begin with:  \n**What can I help you with?** "
+            "content": "Hello! I'm here to help you with your situation. Let's begin with:  \n*What can I help you with?** "
         },
         {
             "role": "user",
@@ -35,7 +38,7 @@
         },
         {
             "role": "assistant",
-            "content": "That sounds tough. Can you tell me how the accident happened?"
+            "content": "Oh no, that sounds tough. Can you tell me what exactly happened during the car accident that led to your foot injury?"
         },
         {
             "role": "user",
@@ -43,7 +46,7 @@
         },
         {
             "role": "assistant",
-            "content": "How has this accident impacted your daily life and routine?"
+            "content": "I see, that must have been quite a shock. Could you describe how this accident and your injury have affected your daily life and responsibilities?"
         },
         {
             "role": "user",
@@ -51,19 +54,11 @@
         },
         {
             "role": "assistant",
-            "content": "Could you share when the legal case related to your accident is set to start?"
+            "content": "I understand this is a challenging time. To assist you further, could you let me know when exactly the legal case related to your accident started?"
         },
         {
             "role": "user",
             "content": "I haven't started a legal case yet"
-        },
-        {
-            "role": "assistant",
-            "content": "When did the initial incident with the car accident occur?"
-        },
-        {
-            "role": "user",
-            "content": "The accident happend yesterday."
         },
         {
             "role": "assistant",

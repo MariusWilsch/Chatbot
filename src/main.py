@@ -8,6 +8,7 @@ from enum import Enum
 from utilities.session_state import init_session_state
 from utilities.gen_result import generate_final_result
 from utilities.checkers import check_accident_details, check_accident_dates
+from utilities.gen_summary import check_summary
 
 # * Constats
 TOKEN_AMOUNT = 0
@@ -48,7 +49,7 @@ def process_user_input() -> str:
             return followup_question
 
     st.session_state.chat_flow_done = True
-    end_prompt = "Thank you for sharing your story. We will now generate a comprehensive result based on the information provided."
+    end_prompt = "Thank you for sharing your story. We will now generate a comprehensive summary for you to double check."
     st.session_state.messages.append({"role": "assistant", "content": end_prompt})
     return end_prompt
 
@@ -63,8 +64,16 @@ if prompt := st.chat_input("What happend?", disabled=st.session_state.chat_flow_
     with st.chat_message("assistant"):
         st.markdown(response)
     if st.session_state.chat_flow_done:
-        generate_final_result(st.session_state.messages, st.session_state.client)
-        st.rerun()
+        result_dict = generate_final_result(
+            st.session_state.messages, st.session_state.client
+        )
+        #! dirty fix for now
+        confirmation = check_summary(
+            st.session_state.messages, result_dict, st.session_state.client
+        )
+        with st.chat_message("assistant"):
+            st.markdown(confirmation.content)
+        # st.rerun()
         # st.session_state.messages.clear()
 
 with st.sidebar:
@@ -74,3 +83,12 @@ with st.sidebar:
         "accident_details_confirmed:  \n", st.session_state.accident_details_confirmed
     )
     st.write("accident_dates_confirmed:  \n", st.session_state.accident_dates_confirmed)
+    if btn_press := st.button("test create confirmation"):
+        with open("results/2024-04-10-10-31-37.json", "r") as f:
+            result = f.read()
+        # print("result: ", result)
+        confirmation = check_summary(
+            st.session_state.messages, result, st.session_state.client
+        )
+        with st.chat_message("assistant"):
+            st.markdown(confirmation)

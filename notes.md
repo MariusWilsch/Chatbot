@@ -17,10 +17,8 @@ runme:
 - I think streaming for the follow-up questions would be nice to have faster *time-to-first-token*.
 - (__DONE__) ~~Count the number of tokens in the input and output for every api call and then return the total number * cost per token in the end to show cost per full run.~~
 - Generate a summary of the result json and asks the user if the data is correct. If not then ask the user to provide the corrections.
-   - Describe accident type
-   - Describe the accident date
+   - Describe the situation
+   - Describe the situation date
    - Describe the consequences
-   - Describe if the case data
-  
-- What are the consequence of the situation? 
-- Why do you need a lawyer?
+   - Describe if the case data is right
+   
