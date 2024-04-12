@@ -84,6 +84,7 @@ Generate a follow-up question that meets these criteria:
 8. NEVER SHOW empathy or write in this manner (thats sad to hear, i feel sorry for your loss, etc) in every response. Only show a little empathy in the first follow up 
 9. If the user's first message is just a greeting like "Hi" or "Hello" or not related to the situation you can write a small greeting (if user greets) and a very generic explanation the purpose of this chat
 question
+10. If there are multiple missing key attributes, you can ask about all of them in one question
 </criteria>
 <response_format>
 Your response must be formatted as a JSON object. The JSON object must have the following structure:
