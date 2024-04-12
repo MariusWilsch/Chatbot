@@ -1,3 +1,6 @@
+import streamlit as st
+
+# * From imports
 from enum import Enum
 from openai import OpenAI
 from anthropic import Anthropic
@@ -5,7 +8,18 @@ from anthropic import Anthropic
 
 def init_session_state(state, clientType: Enum):
     if "client" not in state:
-        state.client = OpenAI() if clientType == clientType.OPENAI else Anthropic()
+        state.client = (
+            OpenAI(api_key=st.secrets["openai_api_key"])
+            if clientType == clientType.OPENAI
+            else Anthropic(api_key=st.secrets["anthropic_api_key"])
+        )
+    #! Right now I will just make it work with chatgpt
+    # if "client" not in state:
+    #     state.client = (
+    #         OpenAI(api_key=st.secrets["openai_api_key"])
+    #         if clientType == clientType.OPENAI
+    #         else Anthropic()
+    #     )
 
     if "messages" not in state:
         state.messages = []

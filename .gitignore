@@ -34,3 +34,6 @@ env2/
 # OS generated files
 .DS_Store
 Thumbs.db
+
+# Streamlit
+.streamlit/secrets.toml

@@ -1,9 +1,9 @@
 streamlit
 pydantic
-langchain
+openai
 anthropic
 python-dotenv
-instructor
 marvin
 uuid
 fix-busted-json
+pymongo[srv]
