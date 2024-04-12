@@ -7,3 +7,4 @@ marvin
 uuid
 fix-busted-json
 pymongo[srv]
+st-supabase-connection
