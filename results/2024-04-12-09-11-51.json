@@ -1,0 +1,62 @@
+{
+    "Short summary": "The user had a car accident a couple of days ago, which resulted in the inability to drive to work, negatively impacting their financial situation.",
+    "annotation": [
+        "car accident",
+        "drive to work",
+        "financial"
+    ],
+    "situation_begin": [
+        "a couple of days ago",
+        "2024-04-10"
+    ],
+    "case_started": null,
+    "parties_involved": [],
+    "direct_cause": "unclear",
+    "consequences": [
+        "cannot drive to work",
+        "financial impact"
+    ],
+    "cost": {
+        "input_cost": 0.057370000000000004,
+        "output_cost": 0.00903,
+        "total_cost": 0.0664
+    },
+    "chat_history": [
+        {
+            "role": "assistant",
+            "content": "Hello! I'm here to help you with your situation. Let's begin with:  \n**What can I help you with?** "
+        },
+        {
+            "role": "user",
+            "content": "I had a car accident a couple of days ago."
+        },
+        {
+            "role": "assistant",
+            "content": "I'm sorry to hear about your accident. Can you tell me what exactly caused the accident, who else was involved, and what were the consequences?"
+        },
+        {
+            "role": "user",
+            "content": "It was only me who was invovled, now I can't drive to work which is very bad for me financially. "
+        },
+        {
+            "role": "assistant",
+            "content": "Could you share what specifically led to the accident?"
+        },
+        {
+            "role": "user",
+            "content": "No I can not. I'm unsure as to why it happend. I passed out very fast"
+        },
+        {
+            "role": "assistant",
+            "content": "Has a legal case been initiated regarding the accident?"
+        },
+        {
+            "role": "user",
+            "content": "No there was no legal accident as of now."
+        },
+        {
+            "role": "assistant",
+            "content": "Thank you for sharing your story. We will now generate a comprehensive summary for you to double check."
+        }
+    ]
+}

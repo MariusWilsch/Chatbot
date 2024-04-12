@@ -7,6 +7,7 @@ from fix_busted_json import repair_json
 from config import total_tokens_used
 
 # Constants
+MODEL_OPENAI_NEWEST = "gpt-4-turbo"
 MODEL_OPENAI_GPT4 = "gpt-4-1106-preview"
 MODEL_OPENAI_GPT3 = "gpt-3.5-turbo"
 
@@ -35,7 +36,7 @@ def call_llm_openai(
     #! For testing purposes only
     try:
         message = client.chat.completions.create(
-            model=MODEL_OPENAI_GPT4,
+            model=MODEL_OPENAI_NEWEST,
             response_format={"type": "json_object"},  # * JSON Mode
             messages=chat_history,
             temperature=0.5,
@@ -75,7 +76,7 @@ def call_llm(
     client: Union[OpenAI, Anthropic],
     system_prompt: str,
     response_model: Union[
-        Type[ChatMessage], Type[ConfidenceDetails], Type[ConfidenceDates], Type[Result]
+        Type[ChatMessage], Type[ConfidenceDetails], Type[ConfidenceDates], dict
     ],
     model: Literal["claude-3-sonnet-20240229", "claude-3-opus-20240229"] = None,
 ) -> Union[ChatMessage, ConfidenceDetails, ConfidenceDates, Result]:

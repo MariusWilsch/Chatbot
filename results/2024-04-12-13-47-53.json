@@ -1,0 +1,62 @@
+{
+    "Short summary": "The user was bitten by a cat on a playground on July 24, which led to the development of a serious case of rabies.",
+    "annotation": [
+        "July 24",
+        "cat",
+        "playground",
+        "rabies"
+    ],
+    "situation_begin": [
+        "July 24",
+        "2024-07-24"
+    ],
+    "case_started": null,
+    "parties_involved": [],
+    "direct_cause": "cat bite",
+    "consequences": [
+        "serious case of rabies"
+    ],
+    "cost": {
+        "input_cost": 0.053450000000000004,
+        "output_cost": 0.009600000000000001,
+        "total_cost": 0.06305000000000001
+    },
+    "chat_history": [
+        {
+            "role": "assistant",
+            "content": "Hello! I'm here to help you with your situation. Let's begin with:  \n**What can I help you with?** "
+        },
+        {
+            "role": "user",
+            "content": "On the 24 of July I was being bit by a cat while I was with my kind on the playground. This cause me to develop a very serious case of rabies."
+        },
+        {
+            "role": "assistant",
+            "content": "Could you tell me who owns the cat, or if there were any witnesses when this happened?"
+        },
+        {
+            "role": "user",
+            "content": "I'm unsure as to who owns the cat. It may be that the cat was wandering around without a real owner. There were the other pople at the playground who can confirm my claims"
+        },
+        {
+            "role": "assistant",
+            "content": "Has a legal case been initiated regarding the incident, and if so, when did it start?"
+        },
+        {
+            "role": "user",
+            "content": "I haven't started a legal case yet."
+        },
+        {
+            "role": "assistant",
+            "content": "Thank you for sharing your story. We will now generate a comprehensive summary for you to double check."
+        },
+        {
+            "role": "user",
+            "content": "Yes that is right!"
+        },
+        {
+            "role": "assistant",
+            "content": "Thank you for sharing your story. We will now generate a comprehensive summary for you to double check."
+        }
+    ]
+}

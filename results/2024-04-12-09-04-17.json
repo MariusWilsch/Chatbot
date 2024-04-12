@@ -1,0 +1,62 @@
+{
+    "Short summary": "The user was working their shift alone when suddenly heavy machinery fell on them. The cause of the accident is unknown, and the user is now unable to work, leading to financial stress.",
+    "annotation": [
+        "heavy machinery",
+        "working",
+        "financial stress"
+    ],
+    "situation_begin": [
+        "a couple of weeks ago",
+        "2024-03-29"
+    ],
+    "case_started": null,
+    "parties_involved": [],
+    "direct_cause": "unknown",
+    "consequences": [
+        "unable to work",
+        "financial stress"
+    ],
+    "cost": {
+        "input_cost": 0.056170000000000005,
+        "output_cost": 0.009810000000000001,
+        "total_cost": 0.06598000000000001
+    },
+    "chat_history": [
+        {
+            "role": "assistant",
+            "content": "Hello! I'm here to help you with your situation. Let's begin with:  \n**What can I help you with?** "
+        },
+        {
+            "role": "user",
+            "content": "I was working my shift when suddenly some heavy machienery fell on to me. Only I was there"
+        },
+        {
+            "role": "assistant",
+            "content": "Could you tell me what caused the heavy machinery to fall?"
+        },
+        {
+            "role": "user",
+            "content": "No I'm not sure why this happend."
+        },
+        {
+            "role": "assistant",
+            "content": "Could you describe any consequences or effects you've experienced since the incident?"
+        },
+        {
+            "role": "user",
+            "content": "The consequences are that I'm not unable to work which is leading me to financaily stress"
+        },
+        {
+            "role": "assistant",
+            "content": "I understand this must be a challenging time for you. Could you please specify when this incident occurred, and have you initiated any legal action regarding this matter?"
+        },
+        {
+            "role": "user",
+            "content": "This accident happend a couple of weeks ago. I haven't started a legal case yet"
+        },
+        {
+            "role": "assistant",
+            "content": "Thank you for sharing your story. We will now generate a comprehensive summary for you to double check."
+        }
+    ]
+}

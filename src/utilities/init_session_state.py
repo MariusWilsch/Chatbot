@@ -25,9 +25,6 @@ def init_session_state(state, clientType: Enum):
     if "result" not in state:
         state.result = None
 
-    if "chat_flow_done" not in state:
-        state.chat_flow_done = False
-
     if "summary_generated" not in state:
         state.summary_generated = False
 

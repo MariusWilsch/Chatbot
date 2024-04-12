@@ -62,9 +62,6 @@ if "accident_dates_confirmed" not in st.session_state:
 if "result" not in st.session_state:
     st.session_state.result = None
 
-if "chat_flow_done" not in st.session_state:
-    st.session_state.chat_flow_done = False
-
 
 # Display the chat history
 for message in st.session_state.messages:

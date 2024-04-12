@@ -1,0 +1,53 @@
+{
+    "Short summary": "The user was working alone with heavy machinery when the tool unexpectedly fell onto them, resulting in severe injuries.",
+    "annotation": [
+        "heavy machinery",
+        "tool",
+        "severe injuries"
+    ],
+    "situation_begin": [
+        "a couple of weeks ago",
+        "2024-03-29"
+    ],
+    "case_started": null,
+    "parties_involved": [],
+    "direct_cause": "tool unexpectedly fell",
+    "consequences": [
+        "severe injuries"
+    ],
+    "cost": {
+        "input_cost": 0.0679,
+        "output_cost": 0.01065,
+        "total_cost": 0.07855000000000001
+    },
+    "chat_history": [
+        {
+            "role": "assistant",
+            "content": "Hello! I'm here to help you with your situation. Let's begin with:  \n**What can I help you with?** "
+        },
+        {
+            "role": "user",
+            "content": "I was working with heavey machienery when the tool suddnely fell onto me. I suffered heavy injuries"
+        },
+        {
+            "role": "assistant",
+            "content": "Could you tell me who else was involved or present when the accident happened?"
+        },
+        {
+            "role": "user",
+            "content": "It was only me."
+        },
+        {
+            "role": "assistant",
+            "content": "Could you let me know when this incident occurred, and if you've initiated any legal action regarding this matter?"
+        },
+        {
+            "role": "user",
+            "content": "The accident happend a couple of weeks ago. I haven't start any legal proceedings"
+        },
+        {
+            "role": "assistant",
+            "content": "Thank you for sharing your story. We will now generate a comprehensive summary for you to double check."
+        }
+    ]
+}

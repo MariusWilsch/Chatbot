@@ -1,0 +1,57 @@
+{
+    "Short summary": "The user broke their foot while working with heavy machinery at their workplace. They were the only person involved in the incident, which occurred yesterday. As a result of the injury, the user is now unable to work, leading to financial limitations.",
+    "annotation": [
+        "broke foot",
+        "heavy machinery",
+        "workplace",
+        "yesterday",
+        "unable to work",
+        "financial limitations"
+    ],
+    "situation_begin": [
+        "yesterday",
+        "2024-04-11"
+    ],
+    "case_started": null,
+    "parties_involved": [],
+    "direct_cause": "working with heavy machinery",
+    "consequences": [
+        "unable to work",
+        "financial limitations"
+    ],
+    "cost": {
+        "input_cost": 0.04401,
+        "output_cost": 0.00819,
+        "total_cost": 0.052199999999999996
+    },
+    "chat_history": [
+        {
+            "role": "assistant",
+            "content": "Hello! I'm here to help you with your situation. Let's begin with:  \n**What can I help you with?** "
+        },
+        {
+            "role": "user",
+            "content": "Hello I broke my foot yesterday when working with heavy machienery at my workplace."
+        },
+        {
+            "role": "assistant",
+            "content": "Who else was involved in the incident, and what were the immediate consequences of the situation at your workplace?"
+        },
+        {
+            "role": "user",
+            "content": "It was only me who was involved, nobody else was in the vicinity. I'm unable to get to work now. This limits me finacnially"
+        },
+        {
+            "role": "assistant",
+            "content": "Have you taken any steps towards initiating a legal case or seeking compensation for your injury?"
+        },
+        {
+            "role": "user",
+            "content": "No I haven't started a legal case yet."
+        },
+        {
+            "role": "assistant",
+            "content": "Thank you for sharing your story. We will now generate a comprehensive summary for you to double check."
+        }
+    ]
+}

@@ -22,5 +22,10 @@ runme:
    - Describe the consequences
    - Describe if the case data is right
 
+- 
+
 ### Problems
+
 - __FIXME__: Right now we pass the chat_history directly into the message parameter of the llm call and also when adding the result_output_json to the user message. These are __uncessary__ input tokens. We must remove that redundancy.
+- __FIXME__: If the user says something the case started couple of x before the accident the model will still only take the current date in consideration and not count the couple of x before the accident. We must fix this.
+  - _Example_: I started a legal case on the 24 of June 2024. The surgery started a couple of months before

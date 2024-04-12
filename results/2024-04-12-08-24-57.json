@@ -1,0 +1,67 @@
+{
+    "Short summary": "The user and their family were involved in a car accident a couple of days ago. The accident occurred when the user was driving on the motorway and the car in front suddenly braked, leading to a collision.",
+    "annotation": [
+        "car accident",
+        "motorway",
+        "sudden brake",
+        "collision",
+        "main income provider",
+        "legal case"
+    ],
+    "situation_begin": [
+        "a couple of days ago",
+        "2024-04-10"
+    ],
+    "case_started": [
+        "2023-04-12"
+    ],
+    "parties_involved": [],
+    "direct_cause": "The car in front suddenly braked on the motorway.",
+    "consequences": [
+        "Unable to earn a wage",
+        "Financial challenges"
+    ],
+    "cost": {
+        "input_cost": 0.06285,
+        "output_cost": 0.01209,
+        "total_cost": 0.07494
+    },
+    "chat_history": [
+        {
+            "role": "assistant",
+            "content": "Hello! I'm here to help you with your situation. Let's begin with:  \n**What can I help you with?** "
+        },
+        {
+            "role": "user",
+            "content": "My family and I were in a car accident a couple of days ago."
+        },
+        {
+            "role": "assistant",
+            "content": "I hope everyone is safe. Could you tell me what exactly led to the car accident?"
+        },
+        {
+            "role": "user",
+            "content": "I was driving on the moterway when the car infront of me suddenly braked. This is how I crashed into him."
+        },
+        {
+            "role": "assistant",
+            "content": "What impact has the accident had on you and your family since it happened?"
+        },
+        {
+            "role": "user",
+            "content": "I'm the main income provider of the family so not being able to earn an wage is very challenging for us."
+        },
+        {
+            "role": "assistant",
+            "content": "Has a legal case been initiated regarding the accident, and if so, could you share the date it started?"
+        },
+        {
+            "role": "user",
+            "content": "Yes a legal case was started on the 12 of April. We have not being doing much with it since then"
+        },
+        {
+            "role": "assistant",
+            "content": "Thank you for sharing your story. We will now generate a comprehensive summary for you to double check."
+        }
+    ]
+}

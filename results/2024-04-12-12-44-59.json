@@ -1,0 +1,69 @@
+{
+    "Short summary": "The user was hospitalized for cancer treatment and underwent surgery. Something went wrong during the surgery, leading to the need for an additional surgery, which the user cannot afford.",
+    "annotation": [
+        "cancer",
+        "surgery",
+        "chief of surgery",
+        "additional surgery"
+    ],
+    "situation_begin": [
+        "a couple of months before June 24, 2024",
+        "2024-04-24"
+    ],
+    "case_started": [
+        "June 24, 2024",
+        "2024-06-24"
+    ],
+    "parties_involved": [
+        "patient (user)",
+        "chief of surgery"
+    ],
+    "direct_cause": "Complications during initial surgery",
+    "consequences": [
+        "need for additional surgery",
+        "financial strain"
+    ],
+    "cost": {
+        "input_cost": 0.059070000000000004,
+        "output_cost": 0.01107,
+        "total_cost": 0.07014000000000001
+    },
+    "chat_history": [
+        {
+            "role": "assistant",
+            "content": "Hello! I'm here to help you with your situation. Let's begin with:  \n**What can I help you with?** "
+        },
+        {
+            "role": "user",
+            "content": "Hello, I was hostipliased because of cancer, I was scheduled for surgey. Something went wrong during my surgey"
+        },
+        {
+            "role": "assistant",
+            "content": "Could you tell me more about what specifically went wrong during the surgery and who were the main parties involved?"
+        },
+        {
+            "role": "user",
+            "content": "I'm unsure as of what went wrong. The parties who were involved are me as a patient and the chief of surgery."
+        },
+        {
+            "role": "assistant",
+            "content": "Could you share what consequences you've experienced or are currently facing due to the complications that occurred during your surgery?"
+        },
+        {
+            "role": "user",
+            "content": "I need to do a another surgery now which I can not afford, this will affect me financially."
+        },
+        {
+            "role": "assistant",
+            "content": "When did the initial surgery that led to these complications take place, and has a legal case been initiated regarding this matter?"
+        },
+        {
+            "role": "user",
+            "content": "I started a legal case on the 24 of June 2024. The surgery started a couple of months before that"
+        },
+        {
+            "role": "assistant",
+            "content": "Thank you for sharing your story. We will now generate a comprehensive summary for you to double check."
+        }
+    ]
+}

@@ -20,15 +20,14 @@ def handle_no_confidence(
 ) -> str:
     print("Handling no confidence")
     followup_prompt = format_followup_prompt(confidence.missing_key_attributes)
-    st.sidebar.write("Follow up prompt  \n", followup_prompt)
+    with st.sidebar:
+        with st.expander("System Prompt"):
+            st.write(followup_prompt[:500])
     followup_question = call_llm(
         messages=messages,
         system_prompt=followup_prompt,
         client=client,
         response_model=ChatMessage,
         # model="claude-3-sonnet-20240229",
-    )
-    st.session_state.messages.append(
-        {"role": "assistant", "content": followup_question.content}
     )
     return followup_question.content

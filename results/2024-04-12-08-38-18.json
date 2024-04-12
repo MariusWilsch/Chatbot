@@ -1,0 +1,70 @@
+{
+    "Short summary": "The user was hospitalized for cancer surgery on April 12 of the current year, but the procedure intended to remove a tumor was mishandled, leading to complications. A second opinion from an external doctor suggested possible foul play in the initial surgery. As a consequence, the user now faces additional financial burdens due to the need for another surgery, which they currently cannot afford.",
+    "annotation": [
+        "cancer",
+        "hospitalized",
+        "tumor",
+        "surgery",
+        "external doctor",
+        "foul play",
+        "second surgery",
+        "financial burden"
+    ],
+    "situation_begin": [
+        "2023-04-12",
+        "2023-04-12"
+    ],
+    "case_started": null,
+    "parties_involved": [
+        "user's doctors",
+        "external doctor"
+    ],
+    "direct_cause": "mishandled surgical procedure",
+    "consequences": [
+        "need for an additional surgery",
+        "financial burden due to cost of second surgery"
+    ],
+    "cost": {
+        "input_cost": 0.060340000000000005,
+        "output_cost": 0.0126,
+        "total_cost": 0.07294
+    },
+    "chat_history": [
+        {
+            "role": "assistant",
+            "content": "Hello! I'm here to help you with your situation. Let's begin with:  \n**What can I help you with?** "
+        },
+        {
+            "role": "user",
+            "content": "I was hospitalised because of cancer a couple of days ago"
+        },
+        {
+            "role": "assistant",
+            "content": "I'm here to help you sort this out. Could you tell me who else is involved in managing your situation, and what consequences you're currently facing or might expect?"
+        },
+        {
+            "role": "user",
+            "content": "My doctors were supposed to cut out the tumor but that went horribiliy wrong. According to a 2nd opinion of an external doctor there was foul play. The consequence I'm facing now is that I need pay for another surgey that I can't afford"
+        },
+        {
+            "role": "assistant",
+            "content": "Could you please specify when the initial dispute with your doctors began, and whether you have started any legal proceedings regarding this matter?"
+        },
+        {
+            "role": "user",
+            "content": "The surgery was a on the 12 of April. And since it's so short of a time frame I did not start a legal case yet"
+        },
+        {
+            "role": "assistant",
+            "content": "Could you please specify the year when the surgery took place?"
+        },
+        {
+            "role": "user",
+            "content": "It was this year"
+        },
+        {
+            "role": "assistant",
+            "content": "Thank you for sharing your story. We will now generate a comprehensive summary for you to double check."
+        }
+    ]
+}

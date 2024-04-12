@@ -1,0 +1,59 @@
+{
+    "Short summary": "The user was working a shift when suddenly some heavy machinery fell onto them. The user was alone at the time of the incident.",
+    "annotation": [
+        "heavy machinery",
+        "shift",
+        "incident"
+    ],
+    "situation_begin": [
+        "2023-06-12",
+        "2023-06-12"
+    ],
+    "case_started": null,
+    "parties_involved": [],
+    "direct_cause": "uncertain",
+    "consequences": [],
+    "cost": {
+        "input_cost": 0.05652000000000001,
+        "output_cost": 0.00852,
+        "total_cost": 0.06504000000000001
+    },
+    "chat_history": [
+        {
+            "role": "assistant",
+            "content": "Hello! I'm here to help you with your situation. Let's begin with:  \n**What can I help you with?** "
+        },
+        {
+            "role": "user",
+            "content": "I was working my shift when suddenly some heavy machienery fell on to me. Only I was there"
+        },
+        {
+            "role": "assistant",
+            "content": "Could you tell me what exactly caused the heavy machinery to fall?"
+        },
+        {
+            "role": "user",
+            "content": "I'm unsure as to why the machiene fell onto me. It kinda just happend."
+        },
+        {
+            "role": "assistant",
+            "content": "When did this incident occur, and have you or anyone else started any legal proceedings regarding this matter?"
+        },
+        {
+            "role": "user",
+            "content": "It happend on the 12th of June and I haven't started a case yet."
+        },
+        {
+            "role": "assistant",
+            "content": "Could you specify the year when this incident happened?"
+        },
+        {
+            "role": "user",
+            "content": "Yes this year!"
+        },
+        {
+            "role": "assistant",
+            "content": "Thank you for sharing your story. We will now generate a comprehensive summary for you to double check."
+        }
+    ]
+}
