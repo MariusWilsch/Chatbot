@@ -63,7 +63,7 @@ def process_user_input() -> str:
         if result == "confirm":
             st.session_state.summary_confirmed = True
             generate_final_result(st.session_state.messages, st.session_state.client)
-            return "Thank you for confirming the summary. We will now proceed with generating the final report."
+            return "Thank you for confirming the summary. We will come back to you in 1 to 3 days."
 
     summary = gen_summary(st.session_state.messages, st.session_state.client)
     return summary
@@ -93,3 +93,11 @@ with st.sidebar:
     )
     st.write("accident_dates_confirmed:  \n", st.session_state.accident_dates_confirmed)
     st.write("messages:  \n", st.session_state.messages)
+    if st.button("Test with marvin"):
+        st.write(
+            marvin.extract(
+                data="Hello, chicken, food, car",
+                target=str,
+                instructions="Please extract the words which are food from the data.",
+            )
+        )
