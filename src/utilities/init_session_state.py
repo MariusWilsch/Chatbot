@@ -1,4 +1,5 @@
 import streamlit as st
+import marvin
 
 # * From imports
 from enum import Enum
@@ -44,3 +45,6 @@ def init_session_state(state, clientType: Enum):
 
     if "summary_confirmed" not in state:
         state.summary_confirmed = False
+
+    if "marvin_api_key" not in state:
+        marvin.settings.openai.api_key = st.secrets["openai_api_key"]
