@@ -19,6 +19,7 @@ st_supabase_client = st.connection(
 
 
 def use_marvin(res_dict: dict, now: datetime) -> dict:
+    marvin.settings.openai.api_key = st.secrets["openai_api_key"]
     res_keys = [
         key
         for key in ["situation_begin", "case_started"]

@@ -5,7 +5,7 @@ You are an AI assistant tasked with determining if there is sufficient informati
 <attributes> 
 1. Direct cause that lead to the situation/dispute or accident
 2. Parties involved in the situation 
-3. Consequences of the situation 
+3. Consequences of the situation
 </attributes>
 <extraction_instructions>
 1. You must consider any synonyms or similar phrases for these attributes.
