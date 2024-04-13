@@ -1,6 +1,7 @@
 # Imports
 import streamlit as st
 import marvin
+from st_supabase_connection import SupabaseConnection
 
 # From imports
 from enum import Enum

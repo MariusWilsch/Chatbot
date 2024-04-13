@@ -1,7 +1,6 @@
 import json, os, marvin
 import streamlit as st
 
-
 # * From imports
 from datetime import datetime
 from typing import List
@@ -70,27 +69,30 @@ def save_result_to_disk(processed_data: dict):
 
 
 def save_result_to_supabase(processed_data: dict):
-    now = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
-    file_name = f"{now}.json"
     try:
-        file_content = json.dumps(processed_data).encode("utf-8")
+        now = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
+        file_name = f"{now}.json"
+        file_content = json.dumps(processed_data)
+
         try:
-            st_supabase_client.create_signed_upload_url(
-                "chatbot_results",
-                f"results/{file_name}",
-                file_content,
-                content_type="application/json",
+            st_supabase_client.upload(
+                bucket_id="chatbot_results",
+                source="local",
+                file=file_content,
+                destination_path=f"results/{file_name}",
+                overwrite="true",
             )
         except Exception as e:
             print(f"Error uploading result file: {e}")
             # Handle the exception or log the error
 
         try:
-            st_supabase_client.create_signed_upload_url(
-                "chatbot_results",
-                "last_result/last_result.json",
-                file_content,
-                content_type="application/json",
+            st_supabase_client.upload(
+                bucket_id="chatbot_results",
+                source="local",
+                file=file_content,
+                destination_path="last_result/last_result.json",
+                overwrite="true",
             )
         except Exception as e:
             print(f"Error uploading last result file: {e}")
