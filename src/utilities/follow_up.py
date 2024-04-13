@@ -8,6 +8,8 @@ from .call_llm import call_llm
 
 
 def format_followup_prompt(missing_key_attributes: List[str]) -> str:
+    with st.sidebar:
+        st.write("Missing key attributes: ", missing_key_attributes)
     return FOLLOWUP_QUESTION_PROMPT.format(
         missing_key_attributes=", ".join(missing_key_attributes)
     )
@@ -20,9 +22,6 @@ def handle_no_confidence(
 ) -> str:
     print("Handling no confidence")
     followup_prompt = format_followup_prompt(confidence.missing_key_attributes)
-    with st.sidebar:
-        with st.expander("System Prompt"):
-            st.write(followup_prompt[:500])
     followup_question = call_llm(
         messages=messages,
         system_prompt=followup_prompt,

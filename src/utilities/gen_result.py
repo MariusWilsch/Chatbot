@@ -12,7 +12,7 @@ from st_supabase_connection import SupabaseConnection
 from config import total_tokens_used
 
 st_supabase_client = st.connection(
-    name="supabase_prod_connection",
+    name="supabase",
     type=SupabaseConnection,
 )
 
@@ -101,6 +101,7 @@ def save_result_to_supabase(processed_data: dict):
     except Exception as e:
         print(f"Error in save_result_to_supabase: {e}")
         # Handle the exception or log the error
+    print("Result saved to Supabase\n\n")
 
 
 def generate_final_result(messages: List, client):
