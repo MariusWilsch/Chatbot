@@ -167,6 +167,7 @@ def save_to_supabase(data: dict):
 
 def process_result(chatbot_dict: dict):
     # Concatenate all the text from chat_history
+    print("Judging case\n\n")
     chat_history_text = (
         "<chat_history>"
         + "\n".join([msg["content"] for msg in chatbot_dict["chat_history"]])
