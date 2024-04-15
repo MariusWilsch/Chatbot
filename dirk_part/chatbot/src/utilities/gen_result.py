@@ -1,6 +1,5 @@
-import io
 import json, os, marvin
-import streamlit as st
+
 
 # * From imports
 from datetime import datetime
@@ -8,11 +7,11 @@ from typing import List
 from pprint import pprint
 from extras.prompts import RESULT_PROMPT
 from .call_llm import call_llm
-from config import supabase_client, total_tokens_used
+
+from config import total_tokens_used
 
 
 def use_marvin(res_dict: dict, now: datetime) -> dict:
-    marvin.settings.openai.api_key = st.secrets["openai_api_key"]
     res_keys = [
         key
         for key in ["situation_begin", "case_started"]
@@ -52,39 +51,6 @@ def calc_cost(total_tokens_used):
     }
 
 
-def save_result_to_disk(processed_data: dict):
-    now = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
-    os.makedirs("results", exist_ok=True)
-    with open(f"results/{now}.json", "w") as f:
-        json.dump(processed_data, f, indent=4)
-    os.makedirs("last_result", exist_ok=True)
-    with open("last_result/last_result.json", "w") as f:
-        json.dump(processed_data, f, indent=4)
-
-
-def save_result_to_supabase(processed_data: dict):
-    now = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
-    file_name = f"{now}.json"
-    file_content = json.dumps(processed_data).encode("utf-8")  # Convert JSON to bytes
-    file_like_object = io.BytesIO(file_content)
-    file_like_object.name = "last_result.json"  # Set the name attribute
-    file_like_object.type = "application/json"  # Set the type attribute
-
-    try:
-        supabase_client.upload(
-            bucket_id="chatbot_results",
-            source="local",
-            file=file_like_object,
-            destination_path=f"results/{file_name}",
-            overwrite="true",
-        )
-    except Exception as e:
-        print(f"Error uploading result file: {e}")
-        # Handle the exception or log the error
-
-    print("Result saved to Supabase\n\n")
-
-
 def generate_final_result(messages: List, client):
     print("Generating final result")
     data = call_llm(
@@ -96,10 +62,12 @@ def generate_final_result(messages: List, client):
     #! For debugging purposes only - Remove this later. Save the model dump to a file
     now = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
     processed_data = use_marvin(data, now)
-    processed_data["cost"] = calc_cost(total_tokens_used)
+    cost_data = calc_cost(total_tokens_used)
+    processed_data["cost"] = cost_data
     processed_data["chat_history"] = messages
-    # * in dev mode, save the result to disk
-    # save_result_to_disk(processed_data)
-    # * in prod mode, save the result to Supabase
-    # save_result_to_supabase(processed_data)
-    return processed_data
+    os.makedirs("results", exist_ok=True)
+    with open(f"results/{now}.json", "w") as f:
+        json.dump(processed_data, f, indent=4)
+    os.makedirs("last_result", exist_ok=True)
+    with open("last_result/last_result.json", "w") as f:
+        json.dump(processed_data, f, indent=4)

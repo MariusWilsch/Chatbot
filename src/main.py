@@ -1,10 +1,7 @@
 # Imports
-import tempfile
+import json
 import streamlit as st
 import marvin
-from st_supabase_connection import SupabaseConnection
-
-import json, io
 
 # From imports
 from enum import Enum
@@ -14,6 +11,7 @@ from utilities.init_session_state import init_session_state
 from utilities.gen_result import generate_final_result
 from utilities.checkers import check_accident_details, check_accident_dates
 from utilities.gen_summary import gen_summary
+from utilities.judge_case import process_result
 from config import total_tokens_used
 
 
@@ -66,8 +64,12 @@ def process_user_input() -> str:
         print("result: ", result)
         if result == "confirm":
             st.session_state.summary_confirmed = True
-            generate_final_result(st.session_state.messages, st.session_state.client)
-            return "Thank you for confirming the summary. We will come back to you in 1 to 3 days."
+            st.session_state.result = generate_final_result(
+                st.session_state.messages, st.session_state.client
+            )
+            return (
+                "Thank you for confirming the summary. We will come back to you in 1 to 3 days.",
+            )
 
     summary = gen_summary(st.session_state.messages, st.session_state.client)
     return summary
@@ -88,30 +90,17 @@ if prompt := st.chat_input(
     if st.session_state.summary_confirmed:
         st.rerun()
 
-st_supabase_client = st.connection(
-    name="supabase",
-    type=SupabaseConnection,
-)
-
-
-#! For testing
-def login_user():
-    try:
-        user = st_supabase_client.auth.sign_in_with_password(
-            {
-                "email": "marius.santiago.wilsch@gmail.com",
-                "password": "QYq!fXjZZ9dP8E9",
-            }
-        )
-        st.success("Logged in successfully!")
-        return user
-    except Exception as e:
-        st.error(f"Login failed: {str(e)}")
-        return None
-
 
 #! For debugging
 with st.sidebar:
+    # Testing process_result function with json file from result folder
+    if st.button("Test process_result"):
+        with open("results/2024-04-12-13-54-55.json", "r") as f:
+            result_dict = json.load(f)
+        process_result(result_dict)
+    if st.button("Clear"):
+        st.write("Implemented functionality to start the chat from scratch")
+    #! Remove when in production
     st.write("Token amount", total_tokens_used)
     st.write("summary_confirmed:  \n", st.session_state.summary_confirmed)
     st.write(
@@ -119,22 +108,3 @@ with st.sidebar:
     )
     st.write("accident_dates_confirmed:  \n", st.session_state.accident_dates_confirmed)
     st.write("messages:  \n", st.session_state.messages)
-
-    if st.button("Test with Supabase"):
-        user = login_user()
-
-        if user:
-            data = {"key": "value"}
-            file_content = json.dumps(data).encode("utf-8")  # Convert JSON to bytes
-            file_like_object = io.BytesIO(file_content)
-            file_like_object.name = "last_result.json"  # Set the name attribute
-            file_like_object.type = "application/json"  # Set the type attribute
-
-            st_supabase_client.upload(
-                bucket_id="chatbot_results",
-                source="local",
-                file=file_like_object,
-                destination_path="last_result/last_result.json",
-                overwrite="true",
-            )
-            st.success("Uploaded to Supabase")

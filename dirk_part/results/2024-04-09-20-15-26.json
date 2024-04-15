@@ -1,0 +1,68 @@
+{
+    "Short summary": "The user has an ongoing dispute with their neighbor, who has been throwing rocks at the user's house. The neighbor has pressed charges, and the user is seeking legal assistance to resolve the matter.",
+    "annotation": [
+        "dispute",
+        "neighbor",
+        "throwing rocks",
+        "house",
+        "pressed charges",
+        "legal assistance"
+    ],
+    "situation_begin": [
+        "1 month ago",
+        "2024-03-09"
+    ],
+    "case_started": null,
+    "parties_involved": [
+        "user",
+        "neighbor"
+    ],
+    "direct_cause": "Neighbor throwing rocks at the user's house",
+    "consequences": [
+        "house damage",
+        "potential for continued harassment and property damage"
+    ],
+    "cost": {
+        "input_cost": 0.051870000000000006,
+        "output_cost": 0.010320000000000001,
+        "total_cost": 0.06219000000000001
+    },
+    "chat_history": [
+        {
+            "role": "assistant",
+            "content": "Hello! I'm here to help you with your situation. Let's begin with:  \n*Explain to me what happened to you?** "
+        },
+        {
+            "role": "user",
+            "content": "i got into a dispute with my neighbour since he was thowing rocks at my house and now he wont stop. he pressed charges but i need a lawyer"
+        },
+        {
+            "role": "assistant",
+            "content": "Could you tell me more about how this dispute is affecting your daily life and what you're most concerned might happen if you don't resolve it?"
+        },
+        {
+            "role": "user",
+            "content": "he is damaging my house and if i dont solve it he will keep throwing rocks at my house"
+        },
+        {
+            "role": "assistant",
+            "content": "When did the initial dispute with your neighbor start, and on what date did the legal case officially begin?"
+        },
+        {
+            "role": "user",
+            "content": "1 month ago"
+        },
+        {
+            "role": "assistant",
+            "content": "Could you specify the exact date when the legal case was initiated?"
+        },
+        {
+            "role": "user",
+            "content": "not yet"
+        },
+        {
+            "role": "assistant",
+            "content": "Thank you for sharing your story. We will now generate a comprehensive result based on the information provided."
+        }
+    ]
+}

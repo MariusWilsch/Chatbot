@@ -1,0 +1,48 @@
+{
+    "Short summary": "The user was involved in a hit-and-run car accident two weeks ago, resulting in eye damage and trauma.",
+    "annotation": [
+        "car accident",
+        "two weeks ago",
+        "hit-and-run",
+        "eye damage",
+        "trauma"
+    ],
+    "situation_begin": [
+        "two weeks ago",
+        "2024-03-26"
+    ],
+    "case_started": null,
+    "parties_involved": [],
+    "direct_cause": "hit-and-run car accident",
+    "consequences": [
+        "eye damage",
+        "trauma"
+    ],
+    "cost": {
+        "input_cost": 0.027940000000000003,
+        "output_cost": 0.0061200000000000004,
+        "total_cost": 0.03406000000000001
+    },
+    "chat_history": [
+        {
+            "role": "assistant",
+            "content": "Hello! I'm here to help you with your situation. Let's begin with:  \n*Explain to me what happened to you?** "
+        },
+        {
+            "role": "user",
+            "content": "hey i got into a car accident two week ago and the guy who drove into me just left without stopping. now my eyes are damage and i suffer from trauma"
+        },
+        {
+            "role": "assistant",
+            "content": "I'm really sorry to hear about the accident and the difficulties you're facing. Can you tell me when exactly the legal case was initiated?"
+        },
+        {
+            "role": "user",
+            "content": "not yet"
+        },
+        {
+            "role": "assistant",
+            "content": "Thank you for sharing your story. We will now generate a comprehensive result based on the information provided."
+        }
+    ]
+}

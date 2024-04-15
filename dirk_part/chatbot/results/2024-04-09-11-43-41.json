@@ -1,0 +1,53 @@
+{
+    "accident_type": "bedrijfsongevallen",
+    "rationale": [
+        "The user mentioned the injury occurred while at work involving heavy machinery, which classifies as an occupational accident."
+    ],
+    "annotation": [
+        "broke my foot",
+        "yesterday",
+        "working at my company",
+        "heavy machinery fell on it"
+    ],
+    "accident_begin": [
+        "yesterday",
+        "2024-04-08"
+    ],
+    "case_started": [
+        null
+    ],
+    "location": null,
+    "parties_involved": [],
+    "direct_cause": "heavy machinery that fell on foot",
+    "consequences": [
+        "foot injury",
+        "pain"
+    ],
+    "cost": {
+        "input_cost": 0.030250000000000003,
+        "output_cost": 0.0069,
+        "total_cost": 0.03715
+    },
+    "chat_history": [
+        {
+            "role": "assistant",
+            "content": "Hello! I'm here to help you with your case. Let's begin with:  \n**Can you briefly describe what happened to you?** "
+        },
+        {
+            "role": "user",
+            "content": "Hello I broke my foot yesterday. It really hurts. I was working at my company and there was some heavy machinery that fell on it."
+        },
+        {
+            "role": "assistant",
+            "content": "Oh no, that sounds painful! Can you tell me when exactly did the legal case related to your accident start?"
+        },
+        {
+            "role": "user",
+            "content": "No I haven't started a case yet."
+        },
+        {
+            "role": "assistant",
+            "content": "Thank you for sharing your story. We will now generate a comprehensive result based on the information provided."
+        }
+    ]
+}

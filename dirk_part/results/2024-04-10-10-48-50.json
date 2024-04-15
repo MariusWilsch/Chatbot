@@ -1,0 +1,57 @@
+{
+    "Short summary": "The user was involved in a car accident on March 15, 1998, which resulted in severe injuries, including multiple broken legs. The user underwent surgery and prolonged hospitalization. The other driver fled the scene, and the user has since lost their job and faced financial difficulties. The government has denied compensation, blaming the user for the accident, despite the user having witnesses. A legal case has been ongoing since January 13, 2024, with no apparent progress.",
+    "annotation": [
+        "car accident",
+        "March 15, 1998",
+        "broken legs",
+        "surgery",
+        "hospitalization",
+        "other driver fled",
+        "lost job",
+        "financial difficulties",
+        "government denied compensation",
+        "witnesses",
+        "legal case",
+        "January 13, 2024"
+    ],
+    "situation_begin": [
+        "1998-03-15",
+        "1998-03-15"
+    ],
+    "case_started": [
+        "2024-01-13",
+        "2024-01-13"
+    ],
+    "parties_involved": [
+        "user",
+        "other driver",
+        "government"
+    ],
+    "direct_cause": "other driver invading user's lane and colliding with user's car",
+    "consequences": [
+        "severe injuries",
+        "prolonged hospitalization",
+        "loss of job",
+        "financial difficulties",
+        "possible long-term disability"
+    ],
+    "cost": {
+        "input_cost": 0.034510000000000006,
+        "output_cost": 0.00882,
+        "total_cost": 0.04333000000000001
+    },
+    "chat_history": [
+        {
+            "role": "assistant",
+            "content": "Hello! I'm here to help you with your situation. Let's begin with:  \n*Explain to me what happened to you?** "
+        },
+        {
+            "role": "user",
+            "content": "Ik schrijf u deze e-mail omdat ik hulp nodig heb bij een auto-ongeluk dat mij is overkomen. Het gebeurde 15-03-1998 en het heeft mijn leven op zijn kop gezet.\n\nIk reed rustig op de snelweg richting mijn werk, toen er plotseling een auto van de andere kant kwam en recht op mij af reed. Ik had geen tijd om te reageren en voordat ik het wist, knalde de auto tegen de mijne aan. Het was een enorme klap en ik verloor de controle over het stuur. Mijn auto belandde in de vangrail en kwam tot stilstand.\n\nDe andere bestuurder is doorgereden en heeft mij daar achtergelaten. Ik was in shock en had ondraaglijke pijn in mijn benen. De ambulance kwam en bracht me naar het ziekenhuis, waar ze ontdekten dat ik beide benen op meerdere plaatsen had gebroken. Ik moest een zware operatie ondergaan en ben maandenlang in het ziekenhuis gebleven.\n\nNu, 15 maanden later, zit ik nog steeds thuis en kan ik amper lopen. Ik heb intense fysiotherapie en het is onduidelijk of ik ooit volledig zal herstellen. Door het ongeluk ben ik mijn baan kwijtgeraakt en zit ik in een moeilijke financi\u00eble situatie.\n\nHet ergste is dat de overheid weigert mij een schadevergoeding te geven. Ze beweren dat het ongeluk mijn schuld was, terwijl ik weet dat dat niet zo is. Ik heb getuigen die kunnen bevestigen dat de andere auto op mijn weghelft reed, maar niemand lijkt daarnaar te willen luisteren.\n\nIk weet dat er een rechtszaak loopt sinds 13-01-2024 , maar heb het gevoel dat er geen vooruitgang wordt geboekt. Ondertussen stapelen de rekeningen zich op en weet ik niet meer wat ik moet doen.\n\nIk hoop dat u mij kunt helpen om de gerechtigheid te krijgen die ik verdien. Ik ben wanhopig en heb iemand nodig die voor mijn rechten opkomt. Kunt u alstublieft naar mijn zaak kijken en mij laten weten of u mij kunt helpen?\n\nAlvast bedankt voor uw tijd en moeite.\n"
+        },
+        {
+            "role": "assistant",
+            "content": "Thank you for sharing your story. We will now generate a comprehensive result based on the information provided."
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "accident_type": "verkeersongevallen",
+    "rationale": [
+        "The user was driving on the highway when another vehicle collided with their car, indicating it was a traffic-related incident.",
+        "The presence of another vehicle coming from the opposite direction and the location being on a highway are typical scenarios for traffic accidents."
+    ],
+    "annotation": [
+        "driving on the highway",
+        "another vehicle",
+        "collided",
+        "side of my car",
+        "hard impact",
+        "car was severely damaged",
+        "damage is on the side where the door is located",
+        "car in terrible condition",
+        "called the police",
+        "reported the accident",
+        "hit-and-run driver",
+        "repair costs",
+        "insurance company",
+        "witnesses",
+        "not at fault"
+    ],
+    "accident_begin": "about 3 months ago",
+    "case_started": "a couple of days ago"
+}

@@ -1,0 +1,65 @@
+{
+    "Short summary": "The user underwent a routine knee surgery in January 2023, during which the surgeon made a severe mistake, resulting in permanent damage to the user's knee, including partial paralysis of the lower leg and foot. This has significantly impacted the user's mobility, ability to work, and has led to financial issues. The user has been attempting to initiate a medical malpractice case against the hospital and the surgeon since August 2023.",
+    "annotation": [
+        "routine knee surgery",
+        "January 2023",
+        "surgeon",
+        "permanent damage",
+        "partial paralysis",
+        "lower leg and foot",
+        "mobility",
+        "daily functioning",
+        "construction worker",
+        "financial problems",
+        "hospital",
+        "medical malpractice case",
+        "August 2023",
+        "medical reports",
+        "witness statements",
+        "healthcare providers",
+        "legal assistance",
+        "justice"
+    ],
+    "situation_begin": [
+        "January 2023",
+        "2023-01-01"
+    ],
+    "case_started": [
+        "August 2023",
+        "2023-08-01"
+    ],
+    "parties_involved": [
+        "user",
+        "hospital",
+        "surgeon"
+    ],
+    "direct_cause": "surgeon's mistake during surgery",
+    "consequences": [
+        "partial paralysis of lower leg and foot",
+        "inability to walk without aids",
+        "constant severe pain",
+        "unable to work as a construction worker",
+        "financial problems",
+        "accumulating medical bills",
+        "lack of income"
+    ],
+    "cost": {
+        "input_cost": 0.036300000000000006,
+        "output_cost": 0.009510000000000001,
+        "total_cost": 0.045810000000000003
+    },
+    "chat_history": [
+        {
+            "role": "assistant",
+            "content": "Hello! I'm here to help you with your situation. Let's begin with:  \n*Explain to me what happened to you?** "
+        },
+        {
+            "role": "user",
+            "content": "Geachte heer/mevrouw,\n\nIk schrijf u deze e-mail omdat ik dringend uw hulp nodig heb bij een medische aansprakelijkheidszaak. In januari 2023 onderging ik een routine-operatie aan mijn knie in verband met aanhoudende pijnklachten. Helaas heeft de chirurg tijdens de ingreep een ernstige fout gemaakt, waardoor ik blijvende schade aan mijn knie heb opgelopen.\n\nTijdens de operatie heeft de arts per ongeluk een zenuw doorsneden, waardoor ik nu te kampen heb met een gedeeltelijke verlamming van mijn onderbeen en voet. Dit heeft grote gevolgen voor mijn mobiliteit en dagelijks functioneren. Ik kan niet meer zonder hulpmiddelen lopen en ervaar constant hevige pijn. Ook kan ik mijn werk als bouwvakker niet meer uitoefenen, wat leidt tot financi\u00eble problemen.\n\nNa de operatie heb ik direct contact opgenomen met het ziekenhuis en de betrokken arts. Er werd erkend dat er een fout is gemaakt, maar tot op heden is er geen concrete oplossing geboden. Ik heb het gevoel dat ze de zaak proberen te vertragen in de hoop dat ik het opgeef. Ondertussen stapelen de medische rekeningen zich op en weet ik niet meer hoe ik dit alles moet betalen zonder inkomen.\n\nSinds augustus 2023 ben ik bezig om een letselschadezaak tegen het ziekenhuis en de arts te starten. Ik heb bewijzen verzameld, waaronder medische rapporten en getuigenverklaringen van andere zorgverleners die bij mijn behandeling betrokken waren. Toch kom ik er alleen niet uit en heb ik professionele juridische hulp nodig.\n\nIk hoop dat u mijn zaak wilt bekijken en mij kunt bijstaan in dit gevecht voor gerechtigheid. Uw expertise op het gebied van medische aansprakelijkheid zou van onschatbare waarde zijn. Ik kan niet accepteren dat een medische fout mijn leven zo ingrijpend heeft veranderd zonder dat er consequenties aan verbonden worden.\n\nZou u alstublieft contact met mij willen opnemen om de mogelijkheden te bespreken? Ik kan alle relevante documentatie en bewijzen overleggen zodat u een goed beeld van de zaak krijgt. Met uw hulp hoop ik eindelijk de erkenning en compensatie te krijgen die ik verdien.\n\nBij voorbaat dank voor uw tijd en overweging."
+        },
+        {
+            "role": "assistant",
+            "content": "Thank you for sharing your story. We will now generate a comprehensive result based on the information provided."
+        }
+    ]
+}

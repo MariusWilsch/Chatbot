@@ -1,0 +1,35 @@
+{
+    "accident_type": "verkeersongevallen",
+    "rationale": [
+        "The user described a situation where they were driving on the highway and a car collided with theirs, which is indicative of a traffic accident."
+    ],
+    "annotation": [
+        "car accident",
+        "driving on the highway",
+        "car came from the other side",
+        "car collided with mine",
+        "lost control of the steering wheel",
+        "car ended up in the guardrail",
+        "other driver drove off",
+        "ambulance",
+        "hospital",
+        "broken both legs",
+        "major surgery",
+        "physical therapy",
+        "lost my job",
+        "financial situation",
+        "government refuses to give me compensation",
+        "legal case ongoing"
+    ],
+    "accident_begin": [
+        "15 months ago",
+        "2023-01-09"
+    ],
+    "case_started": null,
+    "location": "highway",
+    "parties_involved": [
+        "user",
+        "other driver"
+    ],
+    "direct_cause": "another car driving on the wrong side of the road"
+}

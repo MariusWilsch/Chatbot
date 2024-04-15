@@ -5,6 +5,7 @@ import marvin
 from enum import Enum
 from openai import OpenAI
 from anthropic import Anthropic
+from config import supabase_client
 
 
 def init_session_state(state, clientType: Enum):
@@ -14,7 +15,6 @@ def init_session_state(state, clientType: Enum):
             if clientType == clientType.OPENAI
             else Anthropic(api_key=st.secrets["anthropic_api_key"])
         )
-    #! Right now I will just make it work with chatgpt
     # if "client" not in state:
     #     state.client = (
     #         OpenAI(api_key=st.secrets["openai_api_key"])
@@ -48,3 +48,15 @@ def init_session_state(state, clientType: Enum):
 
     if "marvin_api_key" not in state:
         marvin.settings.openai.api_key = st.secrets["openai_api_key"]
+
+    if "supabase_user" not in state:
+        state.supabase_user = supabase_client.auth.sign_in_with_password(
+            {
+                "email": st.secrets["connections"]["supabase"]["user_email"],
+                "password": st.secrets["connections"]["supabase"]["user_password"],
+            }
+        )
+        st.success("Logged in successfully!")
+
+    if "result" not in state:
+        state.result = None

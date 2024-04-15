@@ -126,7 +126,7 @@ Generate a result that includes:
 Your response must be formatted as a JSON object. The JSON object must have the following structure:
 
 {
-  "Short summary": "summary of the situation",
+  "short_summary": "summary of the situation",
   "annotation": ["entity1", "entity2", ...],
   "situation_begin": ["date"],
   "case_started": ["date"],

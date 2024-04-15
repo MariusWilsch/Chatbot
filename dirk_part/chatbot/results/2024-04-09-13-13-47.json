@@ -1,0 +1,61 @@
+{
+    "Short summary": "The user was involved in a car accident last Tuesday when a red pickup truck ran a stop sign and collided with their car, resulting in a broken foot and inability to work due to the physical nature of their job.",
+    "annotation": [
+        "car accident",
+        "last Tuesday",
+        "6 PM",
+        "intersection of 5th Avenue and Market Street",
+        "red pickup truck",
+        "stop sign",
+        "driver's side",
+        "tree",
+        "broke my foot",
+        "provider of my family",
+        "physical job",
+        "can't work",
+        "pressure"
+    ],
+    "situation_begin": [
+        "last Tuesday evening around 6 PM",
+        "2024-04-02"
+    ],
+    "case_started": null,
+    "parties_involved": [
+        "user",
+        "guy in red pickup truck"
+    ],
+    "direct_cause": "guy in red pickup truck ran a stop sign",
+    "consequences": [
+        "broke my foot",
+        "unable to work",
+        "provider for family",
+        "financial pressure"
+    ],
+    "cost": {
+        "input_cost": 0.032310000000000005,
+        "output_cost": 0.00873,
+        "total_cost": 0.04104000000000001
+    },
+    "chat_history": [
+        {
+            "role": "assistant",
+            "content": "Hello! I'm here to help you with your situation. Let's begin with:  \n*Explain to me what happened to you?** "
+        },
+        {
+            "role": "user",
+            "content": "Hey there, I really need some legal advice. I was in a bad car accident last Tuesday evening around 6 PM. It happened at the intersection of 5th Avenue and Market Street. I was driving home from work when this guy in a red pickup truck ran a stop sign and slammed right into the driver's side of my car. It was a really hard hit, and my car ended up spinning and crashing into a nearby tree."
+        },
+        {
+            "role": "assistant",
+            "content": "I'm sorry to hear about your accident. Can you tell me what kind of consequences you're facing now as a result of this incident?"
+        },
+        {
+            "role": "user",
+            "content": "I broke my foot you see and I'm the provider of my family. I have a physcial job so I can't work at all. This puts me into alot of pressure"
+        },
+        {
+            "role": "assistant",
+            "content": "Thank you for sharing your story. We will now generate a comprehensive result based on the information provided."
+        }
+    ]
+}

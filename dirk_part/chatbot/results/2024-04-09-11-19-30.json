@@ -1,0 +1,53 @@
+{
+    "accident_type": "bedrijfsongevallen",
+    "rationale": [
+        "The accident occurred while the person was working at their company",
+        "Heavy machinery was involved in the accident"
+    ],
+    "annotation": [
+        "broke my foot",
+        "working at my company",
+        "heavy machinery fell on it",
+        "factory where I do most of my work",
+        "toilet paper factory"
+    ],
+    "accident_begin": [
+        "yesterday",
+        "2024-04-08"
+    ],
+    "case_started": null,
+    "location": "toilet paper factory",
+    "parties_involved": [],
+    "direct_cause": "heavy machinery fell on foot",
+    "consequences": [
+        "broke foot",
+        "foot really hurts"
+    ],
+    "cost": {
+        "input_cost": 0.0,
+        "output_cost": 0.0,
+        "total_cost": 0.0
+    },
+    "chat_history": [
+        {
+            "role": "assistant",
+            "content": "Hello! I'm here to help you with your case. Let's begin with:  \n**Can you briefly describe what happened to you?** "
+        },
+        {
+            "role": "user",
+            "content": "Hello I broke my foot yesterday. It really hurts. I was working at my company and there was some heavy machinery that fell on it."
+        },
+        {
+            "role": "assistant",
+            "content": "I'm sorry to hear about your foot injury. That must be painful. Can you tell me more about where this accident happened? Was it at a specific location or job site?"
+        },
+        {
+            "role": "user",
+            "content": "It was in the factory where I do most of my work. I work at toilet paper factory."
+        },
+        {
+            "role": "assistant",
+            "content": "Thank you for sharing your story. We will now generate a comprehensive result based on the information provided."
+        }
+    ]
+}
