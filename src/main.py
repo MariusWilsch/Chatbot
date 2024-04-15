@@ -96,11 +96,6 @@ if prompt := st.chat_input(
 #! For debugging
 with st.sidebar:
     # Testing process_result function with json file from result folder
-    uploaded_file = st.file_uploader("Upload a file", type=["json"])
-    if uploaded_file is not None:
-        if st.button("Process File"):
-            data = json.load(uploaded_file)
-            process_result(data)
     st.write("You can refresh the session by clicking the button below")
     if st.button("Clear"):
         st.session_state.clear()
