@@ -12,7 +12,6 @@ from config import supabase_client, total_tokens_used
 
 
 def use_marvin(res_dict: dict, now: datetime) -> dict:
-    # marvin.settings.openai.api_key = st.secrets["openai_api_key"]
     res_keys = [
         key
         for key in ["situation_begin", "case_started"]
