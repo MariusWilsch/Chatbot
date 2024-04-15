@@ -12,18 +12,20 @@ from config import supabase_client, total_tokens_used
 
 
 def use_marvin(res_dict: dict, now: datetime) -> dict:
-    marvin.settings.openai.api_key = st.secrets["openai_api_key"]
+    # marvin.settings.openai.api_key = st.secrets["openai_api_key"]
     res_keys = [
         key
         for key in ["situation_begin", "case_started"]
         if key in res_dict and res_dict[key] is not None
     ]
+    if "case_started" in res_dict and res_dict["case_started"] is "unknown":
+        res_keys.remove("case_started")
     res_str = ", ".join([str(res_dict[key]) for key in res_keys])
     print("Result string: ", res_str)
     res = marvin.extract(
         data=res_str,
         target=str,
-        instructions=f"Please format the data as datetime.date format but as str. For relative values compare to {now}. Only return YYYY-MM-DD formatted dates.",
+        instructions=f"Please format the data as datetime.date format but as str.For relative values compare to {now}. Only return YYYY-MM-DD formatted dates.",
     )
     for i, key in enumerate(res_keys):
         if i < len(res):

@@ -1,7 +1,6 @@
 from enum import Enum
 import json, logging
 from pprint import pprint
-import traceback
 import streamlit as st
 
 # * From imports
@@ -11,7 +10,7 @@ from datetime import datetime
 
 # * My own imports
 from extras.dirk_prompts import OPENAI_PROMPT, CLAUDE_PROMPT
-from config import supabase_client
+from config import supabase_client, total_tokens_used
 
 MODEL_OPENAI_GPT4 = "gpt-4-turbo"
 
@@ -100,13 +99,13 @@ def go_to_judge(data: dict):
         return data
 
     # If case started is unknown, return requires human attention
-    if data["case_started"][1] == "Unknown":
+    if data["case_started"][-1] == "unknown":
         data["result"] = Result.REQUIRES_HUMAN_ATTENTION
         return data
 
     # If case started is a date, check if it is within 365 days from now
-    if data["case_started"][1]:
-        case_started = datetime.strptime(data["case_started"][1], "%Y-%m-%d")
+    if data["case_started"][-1]:
+        case_started = datetime.strptime(data["case_started"][-1], "%Y-%m-%d")
         if (datetime.now() - case_started).days < 365:
             data["result"] = Result.ACCEPTED
             return data
@@ -117,28 +116,6 @@ def go_to_judge(data: dict):
 
     data["result"] = Result.NOT_ACCEPTED
     return data
-
-    # response = (
-    #     supabase.table("your_table_name")
-    #     .insert(
-    #         {
-    #             "case_started": case_started[0] if case_started else None,
-    #             "personal_injury": personal_injury,
-    #             "result": result,
-    #             "situation_begin": situation_begin[0] if situation_begin else None,
-    #             "type_injury": type_injury,
-    #             "what_happened": what_happened,
-    #             "short_summary": short_summary,
-    #             "annotation": annotation,
-    #             "parties_involved": parties_involved,
-    #             "direct_cause": direct_cause,
-    #             "consequences": consequences,
-    #             "cost": cost,
-    #             "chat_history": chat_history,
-    #         }
-    #     )
-    #     .execute()
-    # )
 
 
 # class ChatHistory(BaseModel):
@@ -167,7 +144,7 @@ def save_to_supabase(data: dict):
     try:
         supabase_client.table("chatbot_results").insert(
             {
-                "case_started": data.get("case_started", None)[-1],
+                "case_started": (data.get("case_started") or [None])[-1],
                 "parties_involved": data.get("parties_involved", None),
                 "direct_cause": data.get("direct_cause", None),
                 "consequences": data.get("consequences", None),
@@ -209,8 +186,6 @@ def process_result(chatbot_dict: dict):
     # *  Pass the merged dictionary directly to go_to_judge
     final_result = go_to_judge(new_dict)
     final_result.update(chatbot_dict)
-    print("\n\nMerged dict:")
-    pprint(final_result, indent=2)
     save_to_supabase(final_result)
 
     # return final_result

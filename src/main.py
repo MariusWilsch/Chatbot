@@ -64,9 +64,11 @@ def process_user_input() -> str:
         print("result: ", result)
         if result == "confirm":
             st.session_state.summary_confirmed = True
-            st.session_state.result = generate_final_result(
+            result = generate_final_result(
                 st.session_state.messages, st.session_state.client
             )
+            #! Call this asychronously
+            process_result(result)
             return (
                 "Thank you for confirming the summary. We will come back to you in 1 to 3 days.",
             )
@@ -94,12 +96,11 @@ if prompt := st.chat_input(
 #! For debugging
 with st.sidebar:
     # Testing process_result function with json file from result folder
-    if st.button("Test process_result"):
-        with open("results/2024-04-12-13-54-55.json", "r") as f:
-            result_dict = json.load(f)
-        process_result(result_dict)
+    st.write("You can refresh the session by clicking the button below")
     if st.button("Clear"):
-        st.write("Implemented functionality to start the chat from scratch")
+        st.session_state.clear()
+        init_session_state(st.session_state, clientType.OPENAI)
+        st.rerun()
     #! Remove when in production
     st.write("Token amount", total_tokens_used)
     st.write("summary_confirmed:  \n", st.session_state.summary_confirmed)

@@ -2,10 +2,10 @@ CHECKER_DETAILS_PROMPT = """
 <task> 
 You are an AI assistant tasked with determining if there is sufficient information in the user input and chat history to confidently extract key details about a situation. Your role is to assess whether the provided information allows you to identify the following key attributes: 
 </task>
-<attributes> 
-1. Direct cause that lead to the situation/dispute or accident
-2. Parties involved in the situation 
-3. Consequences of the situation
+<attributes>
+1. Direct cause: The user must briefly explain the specific event or action that directly led to the situation, dispute, or accident to be counted as given.
+2. Parties involved: The user must identify the individuals, groups, or entities involved in the situation to be counted as given.
+3. Consequences: The user must describe the specific outcomes or repercussions resulting from the situation to be counted as given.
 </attributes>
 <extraction_instructions>
 1. You must consider any synonyms or similar phrases for these attributes.
@@ -13,8 +13,7 @@ You are an AI assistant tasked with determining if there is sufficient informati
 3. If the user expresses uncertainty or inability to provide a mandatory attribute through phrases (like I'm unsure of the direct cause, ...)  after being asked once you must count the attribute as given.
 4. If the user provides some relevant information along with unrelated information, you must ignore only the unrelated parts.
 5. If the user provides no relevant information at all and only writes unrelated things, you must count everything as missing. 
-6. If the user is unsure of the cause, consequences or parties involved or doesn't want to provide the information after the follow up question you must count it as given.
-7. Never break character and always maintain the role of an AI assistant.
+6. Never break character and always maintain the role of an AI assistant.
 </extraction_instructions>
 <response_format>
 Your response must be formatted as a JSON object. The JSON object must have the following structure:
@@ -24,45 +23,87 @@ Your response must be formatted as a JSON object. The JSON object must have the 
 "confidence": true/false
 }
 
-The "missing_key_attributes" field must be an array of strings containing the missing key details needed to increase confidence in extracting the necessary information. If no details are missing, you must provide an empty array [].
-The "confidence" field must be a boolean value indicating whether you have enough information to confidently extract the key details. You must use true if confident, false if not confident.
+The "missing_key_attributes" field must be an array of strings containing the missing key attributes needed to increase confidence in extracting the necessary information. If no attributes are missing, you must provide an empty array [].
+The "confidence" field must be a boolean value indicating whether you have enough information to confidently extract the key attributes. You must use true if confident, false if not confident.
 You must ensure that the JSON object is valid and properly formatted.
 </response_format>
 """
 # * Test this: If the user is unsure or does not want to proivde the information after the follow up question count it as given
 #! Situation is kind of borad so I don't if we just somehow mention dispute or saying that sitatuon that may or did lead to legal action
 
-CHECKER_DATE_PROMPT = """ 
-<prompt> 
-<task> 
-You are an AI assistant tasked with extracting important dates from user input and the chat history related to an initial dispute, situation or accident and the corresponding legal case, if applicable. Your role is to determine if there is sufficient information to confidently extract the following attributes: 
-</task> 
-<attributes> 
-1. Start date of the initial dispute or situation in relative or absolute form
-2. Date the legal case started in relative or absolute form (if applicable)
-3. Whether a legal case has been initiated or not 
-</attributes> 
+CHECKER_DATE_PROMPT = """
+<prompt>
+<task>
+You are an AI assistant tasked with extracting important dates from user input and the chat history related to an initial dispute, situation or accident and the corresponding legal case. Your role is to determine if there is sufficient information to confidently extract the following attributes:
+</task>
+
+<attributes>
+1. Start date of the initial dispute or situation in relative or absolute form (mandatory)
+2. Whether a legal case has been initiated or not or if the user's unsure (mandatory)
+3. Date the legal case started in relative or absolute form (if applicable)
+</attributes>
+
+
 <extraction_instructions>
-1. The start date of the initial dispute or situation is mandatory to extract in relative or absolute form. If not provided, you must count it as missing. 
-2. It's mandatory to extract if a case has been initiated. If not provided, you must count it as missing. If the user still doesn't provide the information after the follow up question count it as given.
-3. If a legal case has been initiated, you must extract the date  in relative or absolute form it started. If not provided, you must count it as missing. If the user still doesn't provide the information after the follow up question count it as given.
-4. You must also consider any synonyms or similar phrases for the attributes. 
-5. You must consider relative dates like "a few days ago", "last month", "a couple of weeks ago" or absolute dates like "2022-01-01", "15th of June, 2023" as valid.
+1. The start date of the initial dispute or situation is mandatory to extract in relative or absolute form. If not provided, you must count it as missing.
+2. If the user provides a date, or indicates that the case has not started or is unsure if a case has started count the attribute wether a legal case has been started or not as given. ONLY if none of the 3 options are provided, count it as missing
+3. If a start date for the legal case is provided you must extract the date it started in relative or absolute form. 
+4. You must also consider any synonyms or similar phrases for the attributes.
+5. You must consider relative dates like "a few days ago", "last month", "a couple of weeks ago" or absolute dates like "2022-01-01", "15th of June, 2023" as given dates.
 6. Always consider the entire chat history to extract the required information.
-7. If the user provides an absolute date without a year like 12 of April or 05.06 you must ask for the year.
+7. If the user provides an absolute date without a year, like "12 of April" or "05.06", you must ask for the year.
+8. Only the month and the year are mandatory to extract. If the user does not provide the day, do not count it as missing.
 </extraction_instructions>
-<response_format> 
-Your response must be formatted as a JSON object.
-The JSON object must have the following structure: 
-{ 
-  "missing_key_attributes": ["detail1", "detail2", ...], 
-  "confidence": true/false 
-} 
+
+<response_format>
+Your response must be formatted as a JSON object with the following structure:
+{
+  "missing_key_attributes": ["detail1", "detail2", ...],
+  "confidence": true/false
+}
+
 The "missing_key_attributes" field must be an array of strings containing the specific key details that are missing to confidently extract the required dates and determine the status of the legal case. If no details are missing, provide an empty array [].
 
-The "confidence" field must be a boolean value indicating whether you have enough information to confidently extract the start date of the initial dispute or situation and determine the status of the legal case. Use true if confident, false if not confident. Ensure that the JSON object is valid and properly formatted. 
-</response_format> 
-</prompt> """
+The "confidence" field must be a boolean value indicating whether you have enough information to confidently extract the start date of the initial dispute or situation, determine the status of the legal case, and if applicable extract the date the legal case started. Use true if confident, false if not confident.
+
+Ensure that the JSON object is valid and properly formatted.
+</response_format>
+</prompt>
+"""
+
+#! This prompt is working! 15.04.2024. Right now I'm testing the prompt above!
+# CHECKER_DATE_PROMPT = """
+# <prompt>
+# <task>
+# You are an AI assistant tasked with extracting important dates from user input and the chat history related to an initial dispute, situation or accident and the corresponding legal case, if applicable. Your role is to determine if there is sufficient information to confidently extract the following attributes:
+# </task>
+# <attributes>
+# 1. Start date of the initial dispute or situation in relative or absolute form
+# 2. Date the legal case started in relative or absolute form (if applicable)
+# 3. Whether a legal case has been initiated or not
+# </attributes>
+# <extraction_instructions>
+# 1. The start date of the initial dispute or situation is mandatory to extract in relative or absolute form. If not provided, you must count it as missing.
+# 2. It's mandatory to extract if a case has been initiated. If not provided, you must count it as missing. If the user still doesn't provide the information after the follow up question count it as given.
+# 3. If a legal case has been initiated, you must extract the date  in relative or absolute form it started. If not provided, you must count it as missing. If the user still doesn't provide the information after the follow up question count it as given.
+# 4. You must also consider any synonyms or similar phrases for the attributes.
+# 5. You must consider relative dates like "a few days ago", "last month", "a couple of weeks ago" or absolute dates like "2022-01-01", "15th of June, 2023" as valid.
+# 6. Always consider the entire chat history to extract the required information.
+# 7. If the user provides an absolute date without a year like 12 of April or 05.06 you must ask for the year.
+# 8. Only the month and the year are mandatory to extract. If the user does not provide the day do not count it as missing.
+# </extraction_instructions>
+# <response_format>
+# Your response must be formatted as a JSON object.
+# The JSON object must have the following structure:
+# {
+#   "missing_key_attributes": ["detail1", "detail2", ...],
+#   "confidence": true/false
+# }
+# The "missing_key_attributes" field must be an array of strings containing the specific key details that are missing to confidently extract the required dates and determine the status of the legal case. If no details are missing, provide an empty array [].
+
+# The "confidence" field must be a boolean value indicating whether you have enough information to confidently extract the start date of the initial dispute or situation and determine the status of the legal case. Use true if confident, false if not confident. Ensure that the JSON object is valid and properly formatted.
+# </response_format>
+# </prompt> """
 
 FOLLOWUP_QUESTION_PROMPT = """
 <prompt>
@@ -118,7 +159,7 @@ Generate a result that includes:
 1. A clear summary for the situation. 
 2. Annotated key entities in the user's description
 3. The situation begin date in relative or absolute form
-4. The case start date, if available in relative or absolute form
+4. The case start date, if available in relative or absolute form.
 5. Personal consequences of the situation which if mentioned in the chat history include negative effects physically and mentally and financial loss as consequence of the situation
 </result_criteria>
 
@@ -141,7 +182,7 @@ The "annotation" field must be an array of strings containing the annotated key 
 
 The "situation_begin" field must be List of one string representing the start date of the initial situation, either in relative or absolute format. If not available, set it to null.
 
-The "case_started" field must be a List of one string representing the date the legal case started, if applicable. If not available or if the case hasn't started, set it to null. The case can be in relative form like "a few days ago" or absolute form like "2022-01-01". Both must be accepted.
+The "case_started" field must be a List of one string representing the date the legal case started, if applicable. The date can be in relative form like "a few days ago" or absolute form like "2022-01-01". If the case hasn't started, set it to null. If the user indicates that he/she does not know if a case has started, set it to unknown in lowercase letters. 
 
 The "parties_involved" field must be an array of strings containing the parties involved in the situation. If not available, set it to an empty array [].
 
