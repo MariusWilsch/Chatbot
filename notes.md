@@ -16,14 +16,13 @@ runme:
 - (__DONE__) ~~Count the number of tokens in the input and output for every api call and then return the total number * cost per token in the end to show cost per full run.~~
 - (__DONE__) ~~Generate a summary of the result json and asks the user if the data is correct. If not then ask the user to provide the corrections.~~
 
-   - Describe the situation
-   - Describe the situation date
-   - Describe the consequences
-   - Describe if the case data is right
-
-- Make case_started also mandatory. The response are either date, not started, or unkonwn.
+   - ~~Describe the situation~~
+   - ~~Describe the situation date~~
+   - ~~Describe the consequences~~
+   - ~~Describe if the case data is right~~
+- ~~Make case_started also mandatory. The response are either date, not started, or unkonwn.~~
 - Tokens do not account for LLM Calls in dirk's part of the code just yet
-- ##### The bot needs to be able to understand that just mentioning the word `consequence` for example does not qualify as a consequence. It needs to be able to understand the context of the word. Same goes for the other criteria.
+- (__DONE__) ~~The bot needs to be able to understand that just mentioning the word `consequence` for example does not qualify as a consequence. It needs to be able to understand the context of the word. Same goes for the other criteria.~~
 - Instead of instructing the follow up prompt to create a follow up question for the all missing key attributes instruct to create an array of strings with standalone questions that I can loop over
 - Assign dates as string not as list of strings. Use marvin to convert relative date or abolsute dates in the right format YYYY-MM-DD. If unkown use .lower to make sure it lower case and return unkown for case_started
 
@@ -40,9 +39,3 @@ runme:
 
 - We should try using `gpt4` for *checking* and `gpt3.5` for the *follow-up* for faster processing.
 - Similar to the statement above, we can try the same with `anthropic 3 opus` for *checking* and `sonnet` for *follow-up*.
-
-### Merge
-
-- I need to pass the processed_dict from `generate_final_result` directly to dirk's part of the code
-- I need to fix the function so It uploads the json results to `supabase` storage for viewing later.
-- I need to look into `supabase` for storing the result of dirk's part of the code. I want to use `supabase` database for storing the results.
