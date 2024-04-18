@@ -96,10 +96,10 @@ if prompt := st.chat_input(
 #! For debugging
 with st.sidebar:
     # Testing process_result function with json file from result folder
-    if st.button("Test"):
-        with open("results/2024-04-12-13-54-55.json", "r") as f:
-            result = json.load(f)
-        process_result(result)
+    # if st.button("Test"):
+    #     with open("results/2024-04-12-13-54-55.json", "r") as f:
+    #         result = json.load(f)
+    #     process_result(result)
     st.write("You can refresh the session by clicking the button below")
     if st.button("Clear"):
         st.session_state.clear()
