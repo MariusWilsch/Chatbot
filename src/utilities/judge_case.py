@@ -85,22 +85,29 @@ def go_to_judge(data: dict):
     if type_letsel == "0" or type_letsel == "Medical liability":
         print("No letselschade")
         data["result"] = Result.NOT_ACCEPTED
+        data["personal_injury"] = False
+        data["result_reason"] = (
+            "No letselschade" if type_letsel == "0" else "Medical liability"
+        )
         return data
 
     # If situation begin is missing, return system error
     if not data["situation_begin"][1]:
         data["result"] = Result.SYSTEM_ERROR
+        data["result_reason"] = "Missing situation date"
         return data
 
     situation_begin = datetime.strptime(data["situation_begin"][1], "%Y-%m-%d")
     # If situation begin is within 365 days from now, return accepted
     if (datetime.now() - situation_begin).days < 365:
         data["result"] = Result.ACCEPTED
+        data["result_reason"] = "Recent situation"
         return data
 
     # If case started is unknown, return requires human attention
     if data["case_started"][-1] == "unknown":
         data["result"] = Result.REQUIRES_HUMAN_ATTENTION
+        data["result_reason"] = "Unknown case date"
         return data
 
     # If case started is a date, check if it is within 365 days from now
@@ -108,13 +115,18 @@ def go_to_judge(data: dict):
         case_started = datetime.strptime(data["case_started"][-1], "%Y-%m-%d")
         if (datetime.now() - case_started).days < 365:
             data["result"] = Result.ACCEPTED
+            data["result_reason"] = "Recent case date"
             return data
         # If case started is more than 365 days ago and situation begin is after case started, return system error
         if situation_begin > case_started:
             data["result"] = Result.SYSTEM_ERROR
+            data["result_reason"] = "Case > situation date"
             return data
 
     data["result"] = Result.NOT_ACCEPTED
+    data["result_reason"] = (
+        "Situation too old" if data["case_started"][-1] is None else "Case too old"
+    )
     return data
 
 
@@ -151,6 +163,7 @@ def save_to_supabase(data: dict):
                 "situation_begin": data["situation_begin"][-1],
                 "personal_injury": data["personal_injury"],
                 "result": data["result"],
+                "result_reason": data["result_reason"],
                 "type_injury": data["type_injury"],
                 "what_happened": data["what_happened"],
                 "how_happened": data["how_happened"],

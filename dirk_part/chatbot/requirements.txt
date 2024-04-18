@@ -1,9 +1,0 @@
-streamlit
-pydantic
-langchain
-anthropic
-python-dotenv
-instructor
-marvin
-uuid
-fix-busted-json
