@@ -39,7 +39,7 @@ def call_llm_openai(
             model=MODEL_OPENAI_NEWEST,
             response_format={"type": "json_object"},  # * JSON Mode
             messages=chat_history,
-            temperature=0.5,
+            temperature=0.2,
         )
     except Exception as e:
         print("Error: ", e)

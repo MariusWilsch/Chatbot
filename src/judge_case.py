@@ -76,7 +76,8 @@ def go_to_judge(data: dict):
     type_letsel = AI_letselschade(json.dumps(data))
     if type_letsel is None:
         logging.error("Error in AI_letselschade")
-        return None
+        data["result"] = Result.SYSTEM_ERROR
+        return data
     print(type_letsel)
 
     # Add the type_letselschade variable to the JSON object
@@ -130,28 +131,6 @@ def go_to_judge(data: dict):
     return data
 
 
-# class ChatHistory(BaseModel):
-#     content: str
-#     role: str
-
-
-# class SupabaseData(BaseModel):
-#     case_started: Optional[str]
-#     parties_involved: Optional[List[str]]
-#     direct_cause: Optional[str]
-#     consequences: Optional[List[str]]
-#     situation_begin: str
-#     personal_injury: str
-#     result: str
-#     type_injury: str
-#     what_happened: str
-#     how_happened: str
-#     short_summary: str
-#     annotations: List[str]
-#     cost: float
-#     chat_history: List[ChatHistory]
-
-
 def save_to_supabase(data: dict):
     try:
         supabase_client.table("chatbot_results").insert(
@@ -200,6 +179,6 @@ def process_result(chatbot_dict: dict):
     # *  Pass the merged dictionary directly to go_to_judge
     final_result = go_to_judge(new_dict)
     final_result.update(chatbot_dict)
-    save_to_supabase(final_result)
+    # save_to_supabase(final_result)
 
-    # return final_result
+    return final_result

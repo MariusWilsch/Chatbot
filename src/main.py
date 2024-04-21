@@ -1,5 +1,6 @@
 # Imports
 import json
+from pprint import pprint
 import streamlit as st
 import marvin
 
@@ -7,11 +8,12 @@ import marvin
 from enum import Enum
 
 # My own imports
+from judge_severity import judge_severity
 from utilities.init_session_state import init_session_state
 from utilities.gen_result import generate_final_result
 from utilities.checkers import check_accident_details, check_accident_dates
 from utilities.gen_summary import gen_summary
-from utilities.judge_case import process_result
+from judge_case import Result, process_result
 from config import total_tokens_used
 
 
@@ -68,7 +70,9 @@ def process_user_input() -> str:
                 st.session_state.messages, st.session_state.client
             )
             #! Call this asychronously
-            process_result(result)
+            res = process_result(result)
+            if res["result"] == Result.AC:
+                return judge_severity(res)
             return (
                 "Thank you for confirming the summary. We will come back to you in 1 to 3 days.",
             )
@@ -96,20 +100,28 @@ if prompt := st.chat_input(
 #! For debugging
 with st.sidebar:
     # Testing process_result function with json file from result folder
-    # if st.button("Test"):
-    #     with open("results/2024-04-12-13-54-55.json", "r") as f:
-    #         result = json.load(f)
-    #     process_result(result)
+    if st.button("Test"):
+        with open("results/2024-04-12-13-54-55.json", "r") as f:
+            result = json.load(f)
+        res = process_result(result)
+        pprint(res)
+        if res["result"] == Result.ACCEPTED:
+            with st.chat_message("assistant"):
+                st.markdown(judge_severity(res))
+        else:
+            st.chat_message("assistant").markdown(
+                "Thank you for confirming the summary. We will come back to you in 1 to 3 days."
+            )
     st.write("You can refresh the session by clicking the button below")
     if st.button("Clear"):
         st.session_state.clear()
         init_session_state(st.session_state, clientType.OPENAI)
         st.rerun()
     #! Remove when in production
-    st.write("Token amount", total_tokens_used)
-    st.write("summary_confirmed:  \n", st.session_state.summary_confirmed)
-    st.write(
-        "accident_details_confirmed:  \n", st.session_state.accident_details_confirmed
-    )
-    st.write("accident_dates_confirmed:  \n", st.session_state.accident_dates_confirmed)
-    st.write("messages:  \n", st.session_state.messages)
+    # st.write("Token amount", total_tokens_used)
+    # st.write("summary_confirmed:  \n", st.session_state.summary_confirmed)
+    # st.write(
+    #     "accident_details_confirmed:  \n", st.session_state.accident_details_confirmed
+    # )
+    # st.write("accident_dates_confirmed:  \n", st.session_state.accident_dates_confirmed)
+    # st.write("messages:  \n", st.session_state.messages)
