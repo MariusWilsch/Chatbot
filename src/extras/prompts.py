@@ -195,6 +195,8 @@ The "content" field must contain the generated follow-up question as a string. E
 
 Ensure that the JSON object is valid and properly formatted. With an opening and closing curly brace.
 </response_format>
+<notes>
+- You must ask for all missing key attributes in your follow up question.
 </prompt>
 """
 
