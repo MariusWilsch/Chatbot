@@ -102,5 +102,5 @@ def generate_final_result(messages: List, client):
     # * in dev mode, save the result to disk
     # save_result_to_disk(processed_data)
     # * in prod mode, save the result to Supabase
-    save_result_to_supabase(processed_data)
+    # save_result_to_supabase(processed_data)
     return processed_data

@@ -181,6 +181,6 @@ def process_result(chatbot_dict: dict):
     # *  Pass the merged dictionary directly to go_to_judge
     final_result = go_to_judge(new_dict)
     final_result.update(chatbot_dict)
-    # save_to_supabase(final_result)
+    save_to_supabase(final_result)
 
     return final_result
