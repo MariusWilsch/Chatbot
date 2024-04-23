@@ -16,7 +16,7 @@ MODEL_OPENAI_GPT4 = "gpt-4-turbo"
 
 # Configure the logging system
 logging.basicConfig(
-    level=logging.DEBUG,
+    level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(module)s - %(funcName)s - %(lineno)d - %(message)s",
 )
 
