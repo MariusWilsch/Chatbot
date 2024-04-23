@@ -71,7 +71,7 @@ def process_user_input() -> str:
             )
             #! Call this asychronously
             res = process_result(result)
-            if res["result"] == Result.AC:
+            if res["result"] == Result.ACCEPTED:
                 return judge_severity(res)
             return (
                 "Thank you for confirming the summary. We will come back to you in 1 to 3 days.",

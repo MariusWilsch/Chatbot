@@ -54,7 +54,7 @@ def judge_severity(data: dict) -> str:
     if len(severities_and_compensations) == 1:
         message = f"Your case could be classified as {severities_and_compensations[0][0]} with a compensation amount of {severities_and_compensations[0][1]}"
     else:
-        message = "Your case could be classified as multiple severities: "
+        message = "Your case could be classified as multiple severities:  \n"
         for severity, compensation in severities_and_compensations:
             message += f"\n{severity} with a compensation amount of {compensation}\n"
 

@@ -105,6 +105,8 @@ def go_to_judge(data: dict):
         data["result_reason"] = "Recent situation"
         return data
 
+    if not isinstance(data["case_started"], list):
+        data["case_started"] = [data["case_started"]]
     # If case started is unknown, return requires human attention
     if data["case_started"][-1] == "unknown":
         data["result"] = Result.REQUIRES_HUMAN_ATTENTION

@@ -192,6 +192,9 @@ The "consequences" field must be an array of strings containing the personal con
 
 Ensure that the JSON object is valid and properly formatted.
 </response_format>
+<notes>
+- "case_started" & "situation_begin" must always be a list in every JSON object
+</notes>
 </prompt>
 """
 
