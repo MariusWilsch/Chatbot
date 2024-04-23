@@ -101,7 +101,8 @@ if prompt := st.chat_input(
 with st.sidebar:
     # Testing process_result function with json file from result folder
     if st.button("Test"):
-        with open("results/2024-04-12-13-54-55.json", "r") as f:
+        # results/2024-04-12-09-04-17.json
+        with open("results/2024-04-12-09-04-17.json", "r") as f:
             result = json.load(f)
         res = process_result(result)
         pprint(res)
