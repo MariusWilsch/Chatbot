@@ -75,6 +75,7 @@ The "confidence" field must be a boolean value indicating whether you have enoug
 </notes>
 </prompt>
 """
+
 # CHECKER_DATE_PROMPT = """
 # <prompt>
 # <task>
