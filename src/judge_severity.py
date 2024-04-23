@@ -2,7 +2,7 @@ import streamlit as st
 
 
 # * From Imports
-from utilities.call_llm import call_llm
+from .utilities.call_llm import call_llm
 from extras.prompts import SEVERITY_PROMPT
 
 compensation_amounts = [
