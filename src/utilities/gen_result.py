@@ -92,13 +92,13 @@ def save_result_to_supabase(processed_data: dict):
 
 def generate_final_result(messages: List, client):
     print("Generating final result")
+    logging.info(RESULT_PROMPT)
     data = call_llm(
         messages=messages,
         client=client,
         system_prompt=RESULT_PROMPT,
         response_model=None,
     )
-    logging.info("Result from LLM: ", data.situation_begin, "\n\n")
     #! For debugging purposes only - Remove this later. Save the model dump to a file
     now = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
     processed_data = use_marvin(data, now)

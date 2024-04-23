@@ -74,7 +74,8 @@ Ensure that the JSON object is valid and properly formatted.
 </response_format>
 <notes>
 - If a legal case has been initiated but the user did not provide a date then you must count "Date the legal case started" as missing.
-- If a date is missing the year then you must ask for the year and count it as missing.
+- If a date is missing the year then you must ask for the year and count it as missing.This is mandatory.
+- This task is vital to my lawyer firm. I appreciate your thorough analysis.
 </notes>
 </prompt>
 """
@@ -202,7 +203,7 @@ Ensure that the JSON object is valid and properly formatted.
 </response_format>
 <notes>
 - "case_started" & "situation_begin" must always be a list in every JSON object
-- If the user mentions the year in relative form compare the year to the current year which is: {current_year}
+- If the user does not mention the year in the chat history assume the year is the current year which is: {current_year}
 </notes>
 </prompt>
 """
