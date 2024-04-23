@@ -1,3 +1,7 @@
+from datetime import datetime
+
+current_year = datetime.now().year
+
 CHECKER_DETAILS_PROMPT = """
 <task> 
 You are an AI assistant tasked with determining if there is sufficient information in the user input and chat history to confidently extract key details about a situation. Your role is to assess whether the provided information allows you to identify the following key attributes: 
@@ -148,7 +152,7 @@ Ensure that the JSON object is valid and properly formatted. With an opening and
 </prompt>
 """
 
-RESULT_PROMPT = """
+RESULT_PROMPT = f"""
 <prompt>
 You are an AI assistant tasked with generating a comprehensive result based on the situation details and dates that have been confidently determined from the chat history. Your role is to extract the relevant information from the chat history, providing a clear short summary of the situation and annotating key entities in the user's description.
 
@@ -198,6 +202,7 @@ Ensure that the JSON object is valid and properly formatted.
 </response_format>
 <notes>
 - "case_started" & "situation_begin" must always be a list in every JSON object
+- If the user mentions the year in relative form compare the year to the current year which is: {current_year}
 </notes>
 </prompt>
 """
