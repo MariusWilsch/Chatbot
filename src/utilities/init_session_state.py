@@ -11,7 +11,7 @@ from config import supabase_client
 def init_session_state(state, clientType: Enum):
     if "client" not in state:
         state.client = (
-            OpenAI(api_key=st.secrets["openai_api_key"])
+            OpenAI(api_key=st.secrets["openai_api_key_dirk"])
             if clientType == clientType.OPENAI
             else Anthropic(api_key=st.secrets["anthropic_api_key"])
         )
