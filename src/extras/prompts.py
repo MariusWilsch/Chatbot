@@ -174,7 +174,7 @@ Generate a result that includes:
 <response_format>
 Your response must be formatted as a JSON object. The JSON object must have the following structure:
 
-{
+{{
   "short_summary": "summary of the situation",
   "annotation": ["entity1", "entity2", ...],
   "situation_begin": ["date"],
@@ -182,7 +182,7 @@ Your response must be formatted as a JSON object. The JSON object must have the 
   "parties_involved": ["party1", "party2", ...],
   "direct_cause": "cause"
   "consequences":["consequence1","consequence2"," ..."]
-}
+}}
 
 The "summary" field must be an string providing a clear summary of the situation.
 
