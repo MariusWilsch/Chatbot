@@ -77,7 +77,10 @@ The "confidence" field must be a boolean value indicating whether you have enoug
 </prompt>
 """
 
+<<<<<<< HEAD
 # * This is prompt working resonable well, I'm tring out the one above23.04.2024
+=======
+>>>>>>> 7a29bc9d459287f11cf70e01c39ff097ab43ace2
 # CHECKER_DATE_PROMPT = """
 # <prompt>
 # <task>
@@ -86,11 +89,22 @@ The "confidence" field must be a boolean value indicating whether you have enoug
 
 # <attributes>
 # 1. Start date of the initial dispute or situation in relative or absolute form (mandatory)
+<<<<<<< HEAD
+=======
+# 2. Start date of the legal case in relative or absolute form (if applicable)
+# 2.1 The three possible values for the start date of the legal case are:
+#     2.1.1 A date in relative form like "a few days ago", "last month", "a couple of weeks ago" or absolute form like "2022-01-01", "15th of June, 2023"
+#     2.1.2 The user is unsure if a legal case has started or not
+#     2.1.3 The user did not start a legal case yet
+>>>>>>> 7a29bc9d459287f11cf70e01c39ff097ab43ace2
 # 2. Whether a legal case has been initiated or not or if the user's unsure (mandatory)
 # 3. Date the legal case started in relative or absolute form (if applicable)
 # </attributes>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7a29bc9d459287f11cf70e01c39ff097ab43ace2
 # <extraction_instructions>
 # 1. The start date of the initial dispute or situation is mandatory to extract in relative or absolute form. If not provided, you must count it as missing.
 # 2. If the user provides a date, or indicates that the case has not started or is unsure if a case has started count the attribute wether a legal case has been started or not as given. ONLY if none of the 3 options are provided, count it as missing
@@ -98,8 +112,12 @@ The "confidence" field must be a boolean value indicating whether you have enoug
 # 4. You must also consider any synonyms or similar phrases for the attributes.
 # 5. You must consider relative dates like "a few days ago", "last month", "a couple of weeks ago" or absolute dates like "2022-01-01", "15th of June, 2023" as given dates.
 # 6. Always consider the entire chat history to extract the required information.
+<<<<<<< HEAD
 # 7. If the user provides an absolute date without a year, like "12 of April" or "05.06", you must count it as missing and ask for the year.
 # 8. Only the month and the year are mandatory to extract. If the user does not provide the day, do not count it as missing.
+=======
+
+>>>>>>> 7a29bc9d459287f11cf70e01c39ff097ab43ace2
 # </extraction_instructions>
 
 # <response_format>
@@ -117,7 +135,11 @@ The "confidence" field must be a boolean value indicating whether you have enoug
 # </response_format>
 # <notes>
 # - If a legal case has been initiated but the user did not provide a date then you must count "Date the legal case started" as missing.
+<<<<<<< HEAD
 # - If a date is missing the year then you must ask for the year and count it as missing.This is mandatory.
+=======
+# - Only the month and the year are mandatory to extract. Count a date as missing if the user does not provide the month or the year.
+>>>>>>> 7a29bc9d459287f11cf70e01c39ff097ab43ace2
 # - This task is vital to my lawyer firm. I appreciate your thorough analysis.
 # </notes>
 # </prompt>
