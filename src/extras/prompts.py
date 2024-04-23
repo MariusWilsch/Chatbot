@@ -51,7 +51,7 @@ You are an AI assistant tasked with extracting important dates from user input a
 4. You must also consider any synonyms or similar phrases for the attributes.
 5. You must consider relative dates like "a few days ago", "last month", "a couple of weeks ago" or absolute dates like "2022-01-01", "15th of June, 2023" as given dates.
 6. Always consider the entire chat history to extract the required information.
-7. If the user provides an absolute date without a year, like "12 of April" or "05.06", you must ask for the year.
+7. If the user provides an absolute date without a year, like "12 of April" or "05.06", you must count it as missing and ask for the year.
 8. Only the month and the year are mandatory to extract. If the user does not provide the day, do not count it as missing.
 </extraction_instructions>
 
@@ -70,6 +70,7 @@ Ensure that the JSON object is valid and properly formatted.
 </response_format>
 <notes>
 - If a legal case has been initiated but the user did not provide a date then you must count "Date the legal case started" as missing.
+- If a date is missing the year then you must ask for the year and count it as missing.
 </notes>
 </prompt>
 """

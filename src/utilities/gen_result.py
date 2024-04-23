@@ -1,6 +1,6 @@
 import io
-import json, os, marvin
-import streamlit as st
+import json, os, marvin, logging
+
 
 # * From imports
 from datetime import datetime
@@ -9,6 +9,11 @@ from pprint import pprint
 from extras.prompts import RESULT_PROMPT
 from .call_llm import call_llm
 from config import supabase_client, total_tokens_used
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(module)s - %(funcName)s - %(lineno)d - %(message)s",
+)
 
 
 def use_marvin(res_dict: dict, now: datetime) -> dict:
@@ -29,8 +34,8 @@ def use_marvin(res_dict: dict, now: datetime) -> dict:
     for i, key in enumerate(res_keys):
         if i < len(res):
             res_dict[key].append(str(res[i]))
-    print("Result from Marvin: ", res, "\n\n")
-    pprint(res_dict, indent=2)
+    logging.info("Result from Marvin: ", res, "\n\n")
+    logging.info("Result dict: ", res_dict, "\n\n")
     return res_dict
 
 
