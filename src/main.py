@@ -8,7 +8,7 @@ import marvin
 from enum import Enum
 
 # My own imports
-from .judge_severity import judge_severity
+from judge_severity import judge_severity
 from utilities.init_session_state import init_session_state
 from utilities.gen_result import generate_final_result
 from utilities.checkers import check_accident_details, check_accident_dates

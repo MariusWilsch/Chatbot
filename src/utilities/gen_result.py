@@ -5,7 +5,6 @@ import json, os, marvin, logging
 # * From imports
 from datetime import datetime
 from typing import List
-from pprint import pprint
 from extras.prompts import RESULT_PROMPT
 from .call_llm import call_llm
 from config import supabase_client, total_tokens_used
