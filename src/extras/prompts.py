@@ -170,7 +170,7 @@ You are an AI assistant tasked with generating a follow-up question to obtain mi
 Generate a follow-up question that meets these criteria:
 <criteria>
 1. Use simple speaker language in your response
-2. Focused on obtaining information about one or more of the missing key attributes
+2. Focused on obtaining information about the missing key attributes
 3. Phrased in a way that encourages the user to provide specific and relevant details
 4. Ensure that the generated question is engaging and prompts the user to share the necessary information to fill in the gaps in the conversation
 5. Do not explain yourself, you must just ask the question directly
@@ -179,7 +179,6 @@ Generate a follow-up question that meets these criteria:
 8. NEVER SHOW empathy or write in this manner (thats sad to hear, i feel sorry for your loss, etc) in every response. Only show a little empathy in the first follow up 
 9. If the user's first message is just a greeting like "Hi" or "Hello" or not related to the situation you can write a small greeting (if user greets) and a very generic explanation the purpose of this chat
 question
-10. If there are multiple missing key attributes, you can ask about all of them in one question
 </criteria>
 <response_format>
 Your response must be formatted as a JSON object. The JSON object must have the following structure:
