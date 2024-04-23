@@ -224,8 +224,8 @@ Your response must be formatted as a JSON object. The JSON object must have the 
 {{
   "short_summary": "summary of the situation",
   "annotation": ["entity1", "entity2", ...],
-  "situation_begin": ["date"],
-  "case_started": ["date"],
+  "situation_begin": ["date"], (in relative or absolute form)
+  "case_started": ["date"], (in relative or absolute form)
   "parties_involved": ["party1", "party2", ...],
   "direct_cause": "cause"
   "consequences":["consequence1","consequence2"," ..."]
