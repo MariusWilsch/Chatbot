@@ -92,7 +92,6 @@ def save_result_to_supabase(processed_data: dict):
 
 def generate_final_result(messages: List, client):
     print("Generating final result")
-    logging.info(RESULT_PROMPT)
     data = call_llm(
         messages=messages,
         client=client,
