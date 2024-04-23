@@ -117,9 +117,13 @@ Ensure that the JSON object is valid and properly formatted.
 </response_format>
 <notes>
 - This task is vital to my lawyer firm. I appreciate your thorough analysis.
+- If the case has been started the user must provide a date in relative or absolute form.
+- Every date must either be relative or have a month and year.
 </notes>
 </prompt>
 """
+
+# I had a car accident were I broke my left foot. I was driving as I suddenly hit a very serious pothole. It was just me in the car, nobody else. I broke my foot which is leading to loss of financial income for myself.
 
 #! This prompt is working! 15.04.2024. Right now I'm testing the prompt above!
 # CHECKER_DATE_PROMPT = """
