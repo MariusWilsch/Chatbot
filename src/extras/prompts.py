@@ -68,6 +68,9 @@ The "confidence" field must be a boolean value indicating whether you have enoug
 
 Ensure that the JSON object is valid and properly formatted.
 </response_format>
+<notes>
+- If a legal case has been initiated but the user did not provide a date then you must count "Date the legal case started" as missing.
+</notes>
 </prompt>
 """
 
